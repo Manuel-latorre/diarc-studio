@@ -1,3 +1,6 @@
 /public/banner.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/banner1.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/GOB-MadreCiudades-01.mp4 filter=lfs diff=lfs merge=lfs -text
+/banner.mp4 filter=lfs diff=lfs merge=lfs -text
+/banner1.mp4 filter=lfs diff=lfs merge=lfs -text
+/GOB-MadreCiudades-01.mp4 filter=lfs diff=lfs merge=lfs -text
