@@ -10,7 +10,7 @@ export default function Home() {
       <div className="home">
         <div className="overlay"></div>
         <video autoPlay loop muted className="video">
-          <source src="/banner1.mp4" type="video/mp4" />
+          <source src="/GOBMasterplan-02.mp4" type="video/mp4" />
         </video>
         <div className="content">
           <Title/>

@@ -35,7 +35,7 @@ export const Solutions = () => {
     <div className={style.solutions} id="solutions">
 
       <video autoPlay loop muted className={style.solutionsVideo}>
-        <source src="/GOB-MadreCiudades-01.mp4" type="video/mp4" />
+        <source src="/GOBMadreCiudades-01.mp4" type="video/mp4" />
       </video>
       <div style={{ clipPath: "polygon(40% 0%, 100% 0%, 100% 100%, 60% 100%)", backgroundColor:"black", width:"100%", height:"100%", position:"absolute", top:"100%"}}></div>
       <div className={style.zSolutions}>
