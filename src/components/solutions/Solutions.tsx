@@ -34,9 +34,9 @@ export const Solutions = () => {
   return (
     <div className={style.solutions} id="solutions">
 
-      {/* <video autoPlay loop muted className={style.solutionsVideo}>
-        <source src="/GOBMadreCiudades-01.mp4" type="video/mp4" />
-      </video> */}
+      <video autoPlay loop muted className={style.solutionsVideo}>
+        <source src="/GOBMadreCiudades1.mp4" type="video/mp4" />
+      </video>
       <div style={{ clipPath: "polygon(40% 0%, 100% 0%, 100% 100%, 60% 100%)", backgroundColor:"black", width:"100%", height:"100%", position:"absolute", top:"100%"}}></div>
       <div className={style.zSolutions}>
         <div className="flex flex-col items-end p-2">
