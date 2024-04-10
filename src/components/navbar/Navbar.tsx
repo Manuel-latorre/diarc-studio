@@ -38,7 +38,7 @@ export const Navbar = () => {
   return (
     <nav className={`${styles.navbar}, w-full h-[100px] flex items-center justify-center gap-7 fixed z-10 ${scrolled ? styles.scrolled : ''}`}>
       {navLinks1.map((navlink) => (
-        <ActiveLinks text={navlink.text} path={navlink.path} />
+        <ActiveLinks key={navlink.path} text={navlink.text} path={navlink.path} />
       ))}
 
       <div className="p-2 mx-2">
@@ -51,7 +51,7 @@ export const Navbar = () => {
       </div>
 
       {navLinks2.map((navlink) => (
-        <ActiveLinks text={navlink.text} path={navlink.path} />
+        <ActiveLinks key={navlink.path} text={navlink.text} path={navlink.path} />
       ))}
     </nav>
   );
