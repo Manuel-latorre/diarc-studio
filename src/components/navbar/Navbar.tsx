@@ -39,21 +39,20 @@ export const Navbar = () => {
   }, []);
 
     return (
-        <nav className={`${styles.navbar} w-full h-[100px] flex items-center justify-center fixed z-10`}>
-            <div className="flex gap-7">
-                {navLinks1.map((navlink) => (
-                    <ActiveLinks key={navlink.path} text={navlink.text} path={navlink.path} />
-                ))}
-            </div>
-            
-            {/* Espacio condicional con transición suave */}
-            <div className={`${styles.spacerTransition}`} style={{ width: scrolled ? '300px' : '50px' }}></div>
+      <nav className={`${styles.navbar} w-full h-[100px] flex items-center justify-center fixed z-10`}>
+        <div className="flex gap-7 flex-1 justify-end">
+            {navLinks1.map((navlink) => (
+                <ActiveLinks key={navlink.path} text={navlink.text} path={navlink.path} />
+            ))}
+        </div>
+        
+        <div style={{ width: scrolled ? '350px' : '50px', transition: 'width 0.3s ease-in-out', zIndex:9999 }}></div>
 
-            <div className="flex gap-7">
-                {navLinks2.map((navlink) => (
-                    <ActiveLinks key= {navlink.path} text= {navlink.text} path= {navlink.path} />
-                ))}
-            </div>
-        </nav>
+        <div className="flex gap-7 flex-1 justify-start">
+            {navLinks2.map((navlink) => (
+                <ActiveLinks key={navlink.path} text={navlink.text} path={navlink.path} />
+            ))}
+        </div>
+  </nav>
     );
 };

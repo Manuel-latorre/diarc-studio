@@ -9,17 +9,24 @@ import logo from './logo.svg'
 
 export const Title = () => {
   
-  const navbarHeight = 60; // Altura del navbar
+  const navbarHeight = 50; // Altura del navbar
+   // Margen superior para evitar que la imagen se corte
   const [scrollY, setScrollY] = useState(0);
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollOffset = window.scrollY;
+      const windowHeight = window.innerHeight;
       setScrollY(scrollOffset);
 
-      // Reducir más rápido la imagen
-      const newScale = Math.max(0.3, 1 - scrollOffset / 1500); // Cambio de 2000 a 1500 y mínimo de 0.5 a 0.3
+      // Establece un punto donde la reducción del tamaño comienza antes y termina más rápido
+      const threshold = windowHeight * 0.25; // El umbral más temprano
+      const scaleDownEnd = windowHeight * 0.75; // Punto donde queremos que la escala haya alcanzado el tamaño mínimo
+
+      const newScale = scrollOffset > threshold
+        ? Math.max(0.5, 1 - ((scrollOffset - threshold) / (scaleDownEnd - threshold)))
+        : 1;
       setScale(newScale);
     };
 
@@ -41,16 +48,14 @@ export const Title = () => {
     <div>
       <ScrollShadow visibility="none" hideScrollBar className="w-full h-screen">
       <div className="w-full h-screen flex justify-center items-center">
-      <div style={imageStyle}>
-        <Image src={logo} alt="logo" width={500} height={300} className="py-5"/>
+        <div style={imageStyle}>
+          {/* <Image src={logo} alt="logo" width={500} height={300} className="py-5"/> */}
+          <div className="flex flex-col items-center text-center">
+            <h1 id="diarc">DIARC</h1>
+            <p className="tracking-[72px] text-4xl text-white ml-20">STUDIO</p>
+          </div>
+        </div>
       </div>
-      </div>
-          {/* <Link href={"/"}>
-          <p className={textSizeClass.large + " font-bold text-white"}>DIARC</p>
-          <p className={textSizeClass.small + " uppercase text-center tracking-[52px] font-normal text-white"}>
-              studio
-            </p>
-          </Link> */}
       
       <div id="initialText" className="w-full h-screen text-center flex flex-col justify-center gap-10">
            <div>
