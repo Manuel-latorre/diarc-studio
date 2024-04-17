@@ -1,5 +1,5 @@
 .link{
-    @apply hover:text-white hover:font-semibold transition-all uppercase text-white tracking-widest;
+    @apply hover:text-white hover:font-semibold transition-all uppercase text-white tracking-widest text-lg;
 }
 
 .active-link{

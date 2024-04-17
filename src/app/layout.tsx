@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bai_Jamjuree, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components";
+import { Providers } from "./Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const baijamjuree = Bai_Jamjuree({subsets: ["latin"], weight: ["700", "600", "500", "400", "300", "200"]})
@@ -19,8 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={baijamjuree.className}>
-        <Navbar/>
-        {children}
+        <Providers>
+          <Navbar/>
+          {children}
+        </Providers>
       </body>
     </html>
   );

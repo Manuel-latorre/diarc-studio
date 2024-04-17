@@ -40,7 +40,7 @@ export const Solutions = () => {
       <div style={{ clipPath: "polygon(40% 0%, 100% 0%, 100% 100%, 60% 100%)", backgroundColor:"black", width:"100%", height:"100%", position:"absolute", top:"100%"}}></div>
       <div className={style.zSolutions}>
         <div className="flex flex-col items-end p-2">
-          <div className="mr-52">
+          <div className="mr-24">
             <div className="text-center mb-10">
             <motion.button
                 onClick={handleClick3d}
@@ -48,7 +48,7 @@ export const Solutions = () => {
                 initial={{ opacity: 1, x: 0, y: 0 }} // Estado inicial
                 animate={{
                   opacity: 1,
-                  x: button3dClicked ? "-60vw" : 0, // Mover hacia la izquierda de la pantalla
+                  x: button3dClicked ? "-55vw" : 0, // Mover hacia la izquierda de la pantalla
                   y: button3dClicked ? "0vh" : 0,
                 }} // Estado al hacer clic
                 transition={{ duration: 0.5 }} // Duración de la transición
@@ -85,7 +85,7 @@ export const Solutions = () => {
                 initial={{ opacity: 1, x: 0, y: 0 }} // Estado inicial
                 animate={{
                   opacity: 1,
-                  x: buttonDevClicked ? "-60vw" : 0, // Mover hacia la izquierda de la pantalla
+                  x: buttonDevClicked ? "-55vw" : 0, // Mover hacia la izquierda de la pantalla
                   y: buttonDevClicked ? "-20vh" : 0,
                 }} // Estado al hacer clic
                 transition={{ duration: 0.5 }} // Duración de la transición

@@ -37,3 +37,16 @@
     justify-content: center;
     
 }
+
+#initialText {
+    background-color: rgba(0, 0, 0, 0.9);
+    /* mask-image: linear-gradient(to top, transparent, black 20%, black 90%, transparent); */
+    mask-image: linear-gradient(to top, black 80%, transparent);
+}
+
+
+/* 
+#a{
+    background-color: rgba(0, 0, 0, .9);
+    mask-image: linear-gradient(to top, black 80%, transparent), linear-gradient(to bottom, black 80%, transparent);
+} */

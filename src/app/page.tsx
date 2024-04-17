@@ -2,6 +2,7 @@
 
 import { Navbar, Solutions, Title} from "../components";
 import Link from "next/link";
+import Footer from "./footer/page";
 
 export default function Home() {
 
@@ -16,6 +17,7 @@ export default function Home() {
           <Title/>
         </div>
         <Solutions/>
+        <Footer/>
       </div>
       
   );

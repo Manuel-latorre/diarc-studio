@@ -1,0 +1,7 @@
+.contenedor-central {
+    position: fixed;
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar precisamente al centro */
+    z-index: 1000; /* Asegurar que esté sobre otros elementos */
+  }
