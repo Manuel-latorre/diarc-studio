@@ -77,8 +77,8 @@ export const Projects = () => {
                   </div>
                   <div className="flex flex-wrap items-center justify-center">
                       {selectedProject && selectedProject.galleryVideosAndImages.map((file, index) => (
-                        <div className="w-1/3 p-1 gap-5">
-                          <Image key={index} width={200} height={200} src={file} alt="a"/>
+                        <div key={index}  className="w-1/3 p-1 gap-5">
+                          <Image width={200} height={200} src={file} alt="a"/>
                         </div>
                       ))}
                   </div>
