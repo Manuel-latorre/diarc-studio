@@ -34,7 +34,7 @@ export const Projects = () => {
     <div className="bg-zinc-900">
       <div className="flex items-center justify-around gap-10">
       {projects.map((project) => (
-        <div className="relative w-[400px] h-[440px] my-10 cursor-pointer">
+        <div key={project._id} className="relative w-[400px] h-[440px] my-10 cursor-pointer">
           <Image
             src={project.image}
             alt={project.title}
@@ -76,9 +76,9 @@ export const Projects = () => {
                     </p>
                   </div>
                   <div className="flex flex-wrap items-center justify-center">
-                      {selectedProject && selectedProject.galleryVideosAndImages.map((file) => (
+                      {selectedProject && selectedProject.galleryVideosAndImages.map((file, index) => (
                         <div className="w-1/3 p-1 gap-5">
-                          <Image width={200} height={200} src={file} alt="a"/>
+                          <Image key={index} width={200} height={200} src={file} alt="a"/>
                         </div>
                       ))}
                   </div>
