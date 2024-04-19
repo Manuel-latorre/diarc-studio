@@ -1,9 +1,10 @@
 
 
-import { Logo, Navbar, Solutions, Text} from "../components";
+import { Logo, Solutions, Text} from "../components";
 import Link from "next/link";
 import Footer from "./footer/page";
 import Portfolio from "./portfolio/page";
+import AboutUs from "./about-us/page";
 
 export default function Home() {
 
@@ -17,8 +18,9 @@ export default function Home() {
           <Logo/>
         </div>
         <Portfolio/>
+        <AboutUs/>
         {/* <Solutions/> */}
-        <Footer/>
+        {/* <Footer/> */}
       </div>
       
   );

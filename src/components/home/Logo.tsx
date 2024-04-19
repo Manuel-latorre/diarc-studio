@@ -43,13 +43,13 @@ export const Logo = () => {
   };
 
   return (
-    <div className="z-30">
+    <div className="z-30 max-lg:z-40">
       <div className="w-full h-full flex justify-center items-center">
         <div style={imageStyle}>
           <Link href={"/"}>
             <div className="flex flex-col items-center text-center">
               <h1 id="diarc">DIARC</h1>
-              <p className="tracking-[72px] text-4xl text-white ml-20">
+              <p id="studio" className="tracking-[72px] text-4xl text-white ml-20">
                 STUDIO
               </p>
             </div>

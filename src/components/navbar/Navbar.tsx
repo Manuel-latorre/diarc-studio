@@ -1,9 +1,10 @@
 "use client"
-
 import { ActiveLinks } from '../active-links/ActiveLinks';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import { useEffect, useState } from 'react';
+import { NavbarContent, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Navbar } from '@nextui-org/react';
+import { NavMobile } from './NavMobile';
 
 const navLinks1 = [
     {path: '/#solutions', text: 'Solutions'},
@@ -12,12 +13,13 @@ const navLinks1 = [
 
 const navLinks2 = [
     {path: '/#contact', text: 'Contact'},
-    {path: '/about-us', text: 'About us'},
+    {path: '/#aboutus', text: 'About us'},
 ];
 
-export const Navbar = () => {
+export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [scrolledBg, setScrolledBg] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
       const handleScroll = () => {
@@ -68,27 +70,51 @@ export const Navbar = () => {
         backdropFilter: scrolledBg ? 'blur(10px)' : 'none',
         width: "100%",
         height:"100%",
-        zIndex:3
+        zIndex:3,
     }
 
-    return (
-      <nav className={`${styles.navbar} w-full h-[120px] flex items-center justify-center fixed z-30`} style={navbarStyle}>
-        <div style={bgStyle} className='flex items-center justify-center'>
-            <div className="flex gap-7 flex-1 justify-end z-30">
-                {navLinks1.map((navlink) => (
-                    <ActiveLinks key={navlink.path} text={navlink.text} path={navlink.path} />
-                ))}
-            </div>
-            
-            <div style={middleDivStyle}></div>
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+        e.preventDefault();
+        const anchorName = path.replace('/#', '');
+        const anchorElement = document.getElementById(anchorName);
+        if (anchorElement) {
+            const offsetTop = anchorElement.offsetTop - 100; // Height of your navbar
+            window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth"
+            });
+        }
+    };
 
-            <div className="flex gap-7 flex-1 justify-start z-30">
-                {navLinks2.map((navlink) => (
-                    <ActiveLinks key={navlink.path} text={navlink.text} path={navlink.path} />
-                ))}
-            </div>
+    return (
+      <nav
+        className="w-full h-[120px] flex items-center justify-center fixed z-30 max-lg:hidden"
+        style={navbarStyle}
+      >
+        <div style={bgStyle} className="flex items-center justify-center bg-style w-screen h-full">
+          <div className="flex gap-7 flex-1 justify-end z-30 max-lg:hidden">
+            {navLinks1.map((navlink) => (
+              <ActiveLinks
+                key={navlink.path}
+                text={navlink.text}
+                path={navlink.path}
+                onClick={(e) => handleClick(e, navlink.path)}
+              />
+            ))}
+          </div>
+
+          <div style={middleDivStyle}></div>
+
+          <div className="flex gap-7 flex-1 justify-start z-30 max-lg:hidden">
+            {navLinks2.map((navlink) => (
+              <ActiveLinks
+                key={navlink.path}
+                text={navlink.text}
+                path={navlink.path}
+              />
+            ))}
+          </div>
         </div>
-        
-  </nav>
+      </nav>
     );
 };

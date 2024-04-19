@@ -1,8 +1,9 @@
 .scrolled {
-    background-color: rgba(162, 162, 162, 0.116); /* Cambia el color y la opacidad según sea necesario */
-    backdrop-filter: blur(10px); /* Ajusta el valor de desenfoque según sea necesario */
+    background-color: rgba(162, 162, 162, 0.116);
+    backdrop-filter: blur(10px); 
   }
 
   .spacerTransition {
     transition: width 0.5s ease-in-out;
 }
+

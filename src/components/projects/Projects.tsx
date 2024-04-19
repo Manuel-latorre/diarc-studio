@@ -32,7 +32,7 @@ export const Projects = () => {
     
   return (
     <div className="bg-zinc-900">
-      <div className="flex items-center justify-around gap-10">
+      <div className="flex items-center justify-around gap-10 flex-wrap">
       {projects.map((project) => (
         <div key={project._id} className="relative w-[400px] h-[440px] my-10 cursor-pointer">
           <Image
