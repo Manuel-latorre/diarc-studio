@@ -1,10 +1,12 @@
 
 
-import { Logo, Solutions, Text} from "../components";
+import { Logo, Solutions, Mask} from "../components";
 import Link from "next/link";
 import Footer from "./footer/page";
 import Portfolio from "./portfolio/page";
 import AboutUs from "./about-us/page";
+import TextIncial from "./text/page";
+import { TextGenerateEffectDemo } from "@/components/home/Text";
 
 export default function Home() {
 
@@ -17,9 +19,14 @@ export default function Home() {
         <div className="content">
           <Logo/>
         </div>
-        <Portfolio/>
-        <AboutUs/>
-        {/* <Solutions/> */}
+        <Mask/>
+        {/* <TextGenerateEffectDemo/> */}
+        <TextIncial/>
+        <div>
+          {/* <Solutions/> */}
+          {/* <Portfolio/> */}
+          {/* <AboutUs/> */}
+        </div>
         {/* <Footer/> */}
       </div>
       

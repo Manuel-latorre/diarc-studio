@@ -27,7 +27,7 @@ export const NavMobile = () => {
 
     return (
       <Navbar
-        className="lg:hidden bg-transparent w-full fixed h-[120px]"
+        className="lg:hidden bg-transparent w-full fixed h-[120px] top-0"
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
       >
@@ -38,7 +38,7 @@ export const NavMobile = () => {
 
         />
         </NavbarContent>
-        <NavbarMenu className={`bg-gradient-to-t from-zinc-500 to-zinc-900 bg-transparent z-50 mt-10`}>
+        <NavbarMenu className={`bg-gradient-to-t bg-transparent z-50 mt-10`}>
             {/* {navLinks.map((link, index) => (
               <NavbarMenuItem key={`${link.path + index}`}>
                     <ActiveLinks path={link.path} text={link.text} onClick={() => setIsMenuOpen(false)}/>
