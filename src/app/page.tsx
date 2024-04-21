@@ -20,14 +20,13 @@ export default function Home() {
           <Logo/>
         </div>
         <Mask/>
-        {/* <TextGenerateEffectDemo/> */}
         <TextIncial/>
-        <div>
+        
           {/* <Solutions/> */}
-          {/* <Portfolio/> */}
-          {/* <AboutUs/> */}
-        </div>
-        {/* <Footer/> */}
+          <Portfolio/>
+          <AboutUs/>
+        
+        <Footer/>
       </div>
       
   );

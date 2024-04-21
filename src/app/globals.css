@@ -73,6 +73,10 @@
 }
 
 
+/* #imgWeb{
+    filter: drop-shadow(1px 1px 20px white);
+    
+} */
 
 @media(max-width:627px){
     #diarc{

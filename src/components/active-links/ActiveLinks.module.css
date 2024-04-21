@@ -1,7 +1,8 @@
 .link{
-    @apply hover:text-white hover:font-semibold transition-all uppercase text-white tracking-widest text-lg z-50;
+    @apply hover:text-[#d19bc5] hover:scale-105 transition duration-75 uppercase text-white tracking-widest text-lg z-50 font-bold;
 }
 
+
 .active-link{
-    @apply text-zinc-400;
+    @apply text-green-500;
 }
