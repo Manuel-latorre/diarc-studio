@@ -13,7 +13,7 @@ export default function Home() {
   return (
       <div className="home">
          <video autoPlay loop muted className="video">
-           <source src="/GOBMasterplan2.mp4" type="video/mp4" />
+           <source src="/home.webm" type="video/webm" />
          </video>
         <div className="overlay"></div>
         <div className="content">
@@ -21,6 +21,10 @@ export default function Home() {
         </div>
         <Mask/>
         <TextIncial/>
+        <div className="rotate-180">
+          <Mask/>
+        </div>
+        
         
           {/* <Solutions/> */}
           <Portfolio/>

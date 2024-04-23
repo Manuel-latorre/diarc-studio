@@ -78,6 +78,13 @@
     
 } */
 
+/* .bgProyect{
+    background:linear-gradient(135deg,rgba(255, 255, 255, 0.213), rgba(255,255,255,0));
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+} */
+
 @media(max-width:627px){
     #diarc{
         font-size: 80px;
