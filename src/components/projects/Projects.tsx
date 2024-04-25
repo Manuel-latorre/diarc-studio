@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import logo from '../../images/logo.png'
+import logo from '../../images/logo.png';
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, ScrollShadow} from "@nextui-org/react";
 import '../../app/globals.css'
 import WebIcon from "../icons/WebIcon";
@@ -189,13 +189,13 @@ const buttonClass = (filter:any) =>
           className="top-[110px]"
         >
           <ScrollShadow>
-            <ModalContent className="bg-black">
+            <ModalContent className="bgProyect">
               {(onClose) => (
                 <>
                   {/* <ModalHeader className="text-4xl translate-y-10">{selectedProject?.title}</ModalHeader> */}
                   <ModalBody>
-                    <div className="flex w-full h-full items-center justify-center gap-20">
-                      <div className="w-[30%] justify-start">
+                    <div className="flex w-full h-full items-center justify-center gap-20 max-2xl:flex-col">
+                      <div className="w-[30%] justify-start max-2xl:w-full">
                         {selectedProject && (
                           <div
                             

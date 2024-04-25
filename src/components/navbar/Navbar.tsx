@@ -20,6 +20,9 @@ export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [scrolledBg, setScrolledBg] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLinks, setActiveLinks] = useState<{ [key: string]: boolean }>({});
+
+  
 
   useEffect(() => {
       const handleScroll = () => {
@@ -73,8 +76,18 @@ export const Nav = () => {
         zIndex:3,
     }
 
+
+
+
+
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
         e.preventDefault();
+        const newActiveLinks: { [key: string]: boolean } = {};
+    Object.keys(activeLinks).forEach((key) => {
+        newActiveLinks[key] = false;
+    });
+    newActiveLinks[path] = true;
+    setActiveLinks(newActiveLinks);
         const anchorName = path.replace('/#', '');
         const anchorElement = document.getElementById(anchorName);
         if (anchorElement) {
@@ -85,6 +98,10 @@ export const Nav = () => {
             });
         }
     };
+
+    const getLinkClassName = (path: string) => {
+      return activeLinks[path] ? styles.btn : styles.link;
+  };
 
     return (
       <nav
@@ -98,6 +115,7 @@ export const Nav = () => {
                 key={navlink.path}
                 text={navlink.text}
                 path={navlink.path}
+                className={getLinkClassName(navlink.path)}
                 onClick={(e) => handleClick(e, navlink.path)}
               />
             ))}
@@ -111,6 +129,8 @@ export const Nav = () => {
                 key={navlink.path}
                 text={navlink.text}
                 path={navlink.path}
+                className={getLinkClassName(navlink.path)}
+                onClick={(e) => handleClick(e, navlink.path)}
               />
             ))}
           </div>

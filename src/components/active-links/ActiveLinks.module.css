@@ -1,8 +1,18 @@
-.link{
-    @apply hover:text-[#d19bc5] hover:scale-105 transition duration-75 uppercase text-white tracking-widest text-lg z-50 font-bold;
+/* .link{
+    @apply hover:scale-105 transition duration-75 uppercase text-white tracking-widest text-lg z-50 font-bold flex items-center justify-center w-[200px] h-[100px];
+    
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
-.active-link{
-    @apply text-green-500;
-}
+.btn{
+    background-image: url(../../images/Storke-Menu.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 100px;
+    color: black;
+    @apply flex items-center justify-center uppercase text-black tracking-widest text-lg z-50 font-bold
+  }
+   */

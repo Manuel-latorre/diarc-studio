@@ -3,21 +3,25 @@
 import Link from "next/link";
 import style from './ActiveLinks.module.css';
 import { usePathname } from "next/navigation";
+import { ClassNameValue } from "tailwind-merge";
+
 
 
 interface Props {
     path:string;
     text:string;
+    className: string
     onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
-export const ActiveLinks = ({path, text, onClick}:Props) => {
-  
+export const ActiveLinks = ({path, text, onClick, className}:Props) => {
+  // const [activeLink, setActiveLink] = useState(false);
+
   const pathName = usePathname()  
 
 
   return (
-    <Link className={`${style.link} ${ (pathName === path) && style['active-link']}`} href={path} onClick={onClick}>
+    <Link href={path} className={className} onClick={onClick}>
       {text}                    
     </Link>
   )

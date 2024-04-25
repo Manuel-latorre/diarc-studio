@@ -21,8 +21,8 @@ export const TextGenerateEffect = ({
         opacity: 1,
       },
       {
-        duration: 2,
-        delay: stagger(0.2),
+        duration: 0.5,
+        delay: stagger(0.1),
       }
     );
   }, [scope.current]);
@@ -45,12 +45,13 @@ export const TextGenerateEffect = ({
   };
 
   return (
-    <div className={cn("font-bold", className)}>
+    <div className={cn("font-normal", className)}>
       <div id="initialText" className="w-full flex items-center justify-center">
-        <div style={{lineHeight:1.5}} className="max-md:-mt-32 dark:text-white text-black text-2xl tracking-wide lg:w-[80%] max-lg:px-10 xl:w-[70%] mx-auto text-center md:text-3xl lg:text-4xl xl:text-5xl">
+        <div style={{lineHeight:1.5}} className="max-md:-mt-32 dark:text-white text-black text-2xl tracking-wide lg:w-[80%] max-lg:px-10 xl:w-[70%] mx-auto text-center md:text-3xl ">
           {renderWords()}
         </div>
       </div>
+        <p className="text-center text-2xl transla-y-[10%]">We build, <span className="font-bold">digitally</span></p>
     </div>
   );
 };
