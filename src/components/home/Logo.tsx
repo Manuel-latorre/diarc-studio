@@ -1,10 +1,7 @@
 "use client";
 
-
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { TextGenerateEffectDemo } from "./Text";
 
 export const Logo = () => {
   const navbarHeight = 50;

@@ -106,7 +106,7 @@ const buttonClass = (filter:any) =>
 
     
   return (
-    <div className="bg-[#0A0A0A] py-10">
+    <div className="bg-black py-10">
       <div className="flex justify-center gap-2 p-2 mt-20 sticky top-[120px] z-20 mb-20">
         <button
           onClick={() => filterProjects("web")}

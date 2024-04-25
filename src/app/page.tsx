@@ -6,7 +6,7 @@ import Footer from "./footer/page";
 import Portfolio from "./portfolio/page";
 import AboutUs from "./about-us/page";
 import TextIncial from "./text/page";
-import { TextGenerateEffectDemo } from "@/components/home/Text";
+import SolutionsPage from "./solutions/page";
 
 export default function Home() {
 
@@ -21,12 +21,10 @@ export default function Home() {
         </div>
         <Mask/>
         <TextIncial/>
-        <div className="rotate-180">
-          <Mask/>
-        </div>
-        
-        
-          {/* <Solutions/> */}
+        {/* <div id="maskSolutions"></div> */}
+          <SolutionsPage/>
+        {/* <div id="maskBottomSolutions"></div> */}
+
           <Portfolio/>
           <AboutUs/>
         

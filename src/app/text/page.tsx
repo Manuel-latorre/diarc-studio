@@ -1,6 +1,6 @@
 export default function TextIncial (){    
     return (
-      <div className="flex flex-col justify-center lg:w-[70%] mx-auto gap-8 px-5">
+      <div className="flex flex-col justify-center lg:w-[70%] mx-auto gap-8 px-5 mb-10">
         <p className="text-xl md:text-2xl lg:text-3xl text-white font-normal text-center">
           Based in Buenos Aires, we offer personalized services to bring
           worldwide <br className="max-md:hidden"/> digital experiences to life.

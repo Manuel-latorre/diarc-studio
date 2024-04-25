@@ -3,8 +3,6 @@ import { ActiveLinks } from '../active-links/ActiveLinks';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import { useEffect, useState } from 'react';
-import { NavbarContent, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Navbar } from '@nextui-org/react';
-import { NavMobile } from './NavMobile';
 
 const navLinks1 = [
     {path: '/#solutions', text: 'Solutions'},
@@ -26,7 +24,6 @@ export const Nav = () => {
 
   useEffect(() => {
       const handleScroll = () => {
-          // Ajustar la distancia de scroll a 60px para cambiar el estado
           const offset = window.scrollY;
           if (offset > 120) {  // Cambiado de 50 a 60
               setScrolled(true);
@@ -34,6 +31,13 @@ export const Nav = () => {
               setScrolled(false);
           }
       };
+
+      const handleScrollLinks = () => {
+        const isScrolled = window.scrollY > 0;
+        if (!isScrolled) {
+            setActiveLinks({});
+        }
+    };
 
       const handleScrollBg = () => {
         // Ajustar la distancia de scroll a 60px para cambiar el estado
@@ -46,6 +50,7 @@ export const Nav = () => {
     };
 
       // Agregando el event listener cuando el componente se monta
+      window.addEventListener('scroll', handleScrollLinks);
       window.addEventListener('scroll', handleScroll);
       window.addEventListener('scroll', handleScrollBg);
 
@@ -53,6 +58,7 @@ export const Nav = () => {
       return () => {
           window.removeEventListener('scroll', handleScroll);
           window.removeEventListener('scroll', handleScrollBg);
+          window.removeEventListener('scroll', handleScrollLinks);
       };
   }, []);
 
