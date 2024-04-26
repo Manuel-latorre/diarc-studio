@@ -4,7 +4,6 @@ import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Autoplay, Grid, Navigation, Pagination } from 'swiper/modules';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, ScrollShadow} from "@nextui-org/react";
-import { useKeenSlider, KeenSliderPlugin, KeenSliderInstance } from "keen-slider/react"
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
@@ -42,44 +41,6 @@ async function fetchProjects(): Promise<Project[]> {
 }
 
 
-// KEEN SLIDER 
-
-// function ThumbnailPlugin(
-//   mainRef: MutableRefObject<KeenSliderInstance | null>
-// ): KeenSliderPlugin {
-//   return (slider) => {
-//     function removeActive() {
-//       slider.slides.forEach((slide) => {
-//         slide.classList.remove("active")
-//       })
-//     }
-//     function addActive(idx: number) {
-//       slider.slides[idx].classList.add("active")
-//     }
-
-//     function addClickEvents() {
-//       slider.slides.forEach((slide, idx) => {
-//         slide.addEventListener("click", () => {
-//           if (mainRef.current) mainRef.current.moveToIdx(idx)
-//         })
-//       })
-//     }
-
-//     slider.on("created", () => {
-//       if (!mainRef.current) return
-//       addActive(slider.track.details.rel)
-//       addClickEvents()
-//       mainRef.current.on("animationStarted", (main) => {
-//         removeActive()
-//         const next = main.animator.targetIdx || 0
-//         addActive(main.track.absToRel(next))
-//         slider.moveToIdx(Math.min(slider.track.details.maxIdx, next))
-//       })
-//     })
-//   }
-// }
-
-// KEEN SLIDER FINISH
 
 export const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -87,20 +48,6 @@ export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
-  // const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-  //   initial: 0,
-  // })
-  // const [thumbnailRef] = useKeenSlider<HTMLDivElement>(
-  //   {
-  //     initial: 1,
-  //     loop: true,
-  //     slides: {
-  //       perView: 1,
-  //       spacing: 10,
-  //     },
-  //   },
-  //   [ThumbnailPlugin(instanceRef)]
-  // )
 
   const filterProjects = (platform: string) => {
     setActiveFilter(platform);
