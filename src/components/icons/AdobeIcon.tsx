@@ -1,17 +1,36 @@
+import React from "react";
 
-const AdobeIcon = () => (
-  <div>
-    <svg width={50} height={50} fill="#ff0000" viewBox="0 -1.5 27 27" xmlns="http://www.w3.org/2000/svg">
-      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-      <g id="SVGRepo_iconCarrier">
-        <path d="m17.097 0h10.025v24z"></path>
-        <path d="m10.034 0h-10.034v24z"></path>
-        <path d="m9.181 19.171 4.384-10.329 6.386 15.156h-4.184l-1.91-4.827z"></path>
-      </g>
+const AdobeIcon = () => {
+  return (
+    <svg
+      width={50}
+      height={50}
+      fill="#b9b0b0"
+      id="Layer_1"
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+    >
+      <path
+        id="Path_9-2"
+        data-name="Path 9-2"
+        className="cls-1"
+        d="m294.42,133h109.02v260.94l-109.02-260.94Z"
+      />
+      <path
+        id="Path_10-2"
+        data-name="Path 10-2"
+        className="cls-1"
+        d="m217.63,133h-109.06v260.94l109.06-260.94Z"
+      />
+      <path
+        id="Path_11-2"
+        data-name="Path 11-2"
+        className="cls-1"
+        d="m256.03,229.21l69.44,164.76h-45.51l-20.78-52.47h-50.82l47.66-112.29Z"
+      />
     </svg>
-    {/* <p className="font-bold">Adobe</p> */}
-  </div>
-);
+  );
+};
 
 export default AdobeIcon;

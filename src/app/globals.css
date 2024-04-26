@@ -92,9 +92,9 @@
 
 
 .bgProyect{
-    background:linear-gradient(135deg,rgba(0, 0, 0, 0.798), rgba(255,255,255,0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background:linear-gradient(135deg,rgba(0, 0, 0, 0.98), rgba(0, 0, 0, 0.481));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .maskRight{

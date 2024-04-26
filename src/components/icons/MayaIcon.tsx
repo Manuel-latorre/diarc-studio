@@ -1,148 +1,52 @@
 const MayaIcon = () => {
   return (
-    <div>
+ 
+<svg width={50} height={50} fill="#b9b0b0" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  
+    <linearGradient id="linear-gradient" x1="118.93" y1="-133.13" x2="285.64" y2="-165.54" gradientTransform="translate(110.49 405.7) scale(1.19)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#414141"/>
+      <stop offset=".5" stop-color="#666"/>
+      <stop offset="1" stop-color="#818181"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="235.63" y1="20.56" x2="259.46" y2="-251.79" gradientTransform="translate(110.49 405.7) scale(1.19)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4a4a4a"/>
+      <stop offset=".5" stop-color="#6c6c6c"/>
+      <stop offset="1" stop-color="#a6a6a6"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="97.72" y1="-247.25" x2="34.86" y2="-53.79" gradientTransform="translate(110.49 405.7) scale(1.19)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3b3b3"/>
+      <stop offset=".5" stop-color="#939393"/>
+      <stop offset="1" stop-color="#5f5f5f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="-39.14" y1="-26.4" x2="66.38" y2="-60.68" gradientTransform="translate(110.49 405.7) scale(1.19)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#464646"/>
+      <stop offset=".5" stop-color="#4c4c4c"/>
+      <stop offset="1" stop-color="#626262"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="43.36" y1="-178.56" x2="-91.66" y2="-52.65" gradientTransform="translate(110.49 405.7) scale(1.19)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#494949"/>
+      <stop offset=".5" stop-color="#575757"/>
+      <stop offset="1" stop-color="#6a6a6a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="168.24" y1="-24.91" x2="237.23" y2="-80.78" gradientTransform="translate(110.49 405.7) scale(1.19)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#494949"/>
+      <stop offset=".5" stop-color="#494949"/>
+      <stop offset="1" stop-color="#414141"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="272.67" y1="-93.62" x2="199.31" y2="-139.46" gradientTransform="translate(110.49 405.7) scale(1.19)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4e4e4e"/>
+      <stop offset=".5" stop-color="#5c5c5c"/>
+      <stop offset="1" stop-color="#4e4f4f"/>
+    </linearGradient>
 
-        <svg
-          width={50} 
-          height={50}
-          viewBox="0 0 32 32"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          fill="#000000"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <defs>
-              <linearGradient
-                id="a"
-                x1="-611.348"
-                y1="-67.488"
-                x2="-600.272"
-                y2="-65.335"
-                gradientTransform="matrix(1.437, 0, 0, -1.437, 894.417, -82.292)"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#0f6067"></stop>
-                <stop offset="0.5" stop-color="#05abac"></stop>
-                <stop offset="1" stop-color="#58bec4"></stop>
-              </linearGradient>
-              <linearGradient
-                id="b"
-                x1="-603.594"
-                y1="-77.699"
-                x2="-602.011"
-                y2="-59.604"
-                gradientTransform="matrix(1.437, 0, 0, -1.437, 894.417, -82.292)"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#117c83"></stop>
-                <stop offset="0.5" stop-color="#21b5b5"></stop>
-                <stop offset="1" stop-color="#7ed4d4"></stop>
-              </linearGradient>
-              <linearGradient
-                id="c"
-                x1="-612.757"
-                y1="-59.906"
-                x2="-616.934"
-                y2="-72.76"
-                gradientTransform="matrix(1.437, 0, 0, -1.437, 894.417, -82.292)"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#9accd3"></stop>
-                <stop offset="0.5" stop-color="#72aeb3"></stop>
-                <stop offset="1" stop-color="#317d7f"></stop>
-              </linearGradient>
-              <linearGradient
-                id="d"
-                x1="-621.851"
-                y1="-74.579"
-                x2="-614.84"
-                y2="-72.301"
-                gradientTransform="matrix(1.437, 0, 0, -1.437, 894.417, -82.292)"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#21626e"></stop>
-                <stop offset="0.5" stop-color="#157c84"></stop>
-                <stop offset="1" stop-color="#03a3a5"></stop>
-              </linearGradient>
-              <linearGradient
-                id="e"
-                x1="-616.369"
-                y1="-64.469"
-                x2="-625.34"
-                y2="-72.835"
-                gradientTransform="matrix(1.437, 0, 0, -1.437, 894.417, -82.292)"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#0b7c81"></stop>
-                <stop offset="0.5" stop-color="#068d90"></stop>
-                <stop offset="1" stop-color="#16b1b1"></stop>
-              </linearGradient>
-              <linearGradient
-                id="f"
-                x1="-608.072"
-                y1="-74.678"
-                x2="-603.488"
-                y2="-70.966"
-                gradientTransform="matrix(1.437, 0, 0, -1.437, 894.417, -82.292)"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#0a8a8f"></stop>
-                <stop offset="0.5" stop-color="#0f7c82"></stop>
-                <stop offset="1" stop-color="#1a5964"></stop>
-              </linearGradient>
-              <linearGradient
-                id="g"
-                x1="-601.134"
-                y1="-70.113"
-                x2="-606.008"
-                y2="-67.067"
-                gradientTransform="matrix(1.437, 0, 0, -1.437, 894.417, -82.292)"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#256a77"></stop>
-                <stop offset="0.5" stop-color="#0d9499"></stop>
-                <stop offset="1" stop-color="#06a0a2"></stop>
-              </linearGradient>
-            </defs>
-            <title>file_type_maya</title>
-            <path
-              d="M21.6,3.462H30L18.767,24.211s-1.893-5.5-2.706-7.459"
-              style={{ fill: "url(#a)" }}
-            ></path>
-            <path
-              d="M23.669,29.118H30V3.462C29.995,16.869,24.36,29.118,23.669,29.118Z"
-              style={{ fill: "url(#b)" }}
-            ></path>
-            <path
-              d="M18.767,24.211H13.541L2,3.462c2.047-.26,6.135-.611,8.16-.776Z"
-              style={{ fill: "url(#c)" }}
-            ></path>
-            <path
-              d="M8.693,16.019C6.96,22.866,1.995,29.32,2,29.314c5.752,0,6.991-.835,6.991-1.276V16.54C8.89,16.37,8.794,16.194,8.693,16.019Z"
-              style={{ fill: "url(#d)" }}
-            ></path>
-            <path
-              d="M2,3.462V29.314c3.147-5.2,4.981-8.6,6.6-13.45C4.6,8.794,2,3.462,2,3.462Z"
-              style={{ fill: "url(#e)" }}
-            ></path>
-            <polyline
-              points="23.233 28.102 23.669 29.118 23.669 15.647 23.233 16.375"
-              style={{ fill: "url(#f)" }}
-            ></polyline>
-            <path
-              d="M23.647,15.673v13.4l.016.043c.452,0,6.332-14.5,6.332-25.656C29.995,3.462,26.406,10.947,23.647,15.673Z"
-              style={{ fill: "url(#g)" }}
-            ></path>
-          </g>
-        </svg>
-        {/* <p className="font-bold">Maya</p> */}
-    </div>
+  <path className="cls-1" d="m325.62,107.47h104.59l-139.78,258.19s-23.55-68.4-33.67-92.81"/>
+  <path className="cls-4" d="m351.42,426.72h78.79V107.47c-.07,166.83-70.19,319.25-78.79,319.25Z"/>
+  <path className="cls-6" d="m290.43,365.66h-65.03L81.79,107.47c25.47-3.24,76.34-7.61,101.54-9.66l107.1,267.85Z"/>
+  <path className="cls-7" d="m165.07,263.72c-21.57,85.2-83.35,165.51-83.28,165.44,71.58,0,86.99-10.39,86.99-15.88v-143.09c-1.26-2.12-2.45-4.3-3.7-6.48Z"/>
+  <path className="cls-3" d="m81.79,107.47v321.7c39.16-64.7,61.98-107.03,82.16-167.36-49.75-87.98-82.16-154.33-82.16-154.33Z"/>
+  <polyline className="cls-2" points="346 414.08 351.42 426.72 351.42 259.09 346 268.15"/>
+  <path className="cls-5" d="m351.16,259.42v166.77l.2.53c5.62,0,78.79-180.46,78.79-319.25,0,0-44.65,93.14-78.99,151.95Z"/>
+</svg>
   );
 };
 
