@@ -9,7 +9,6 @@ import 'swiper/css/grid';
 import 'swiper/css/pagination';
 import './styles.css';
 import '../../app/globals.css'
-import "keen-slider/keen-slider.min.css"
 import Image from "next/image";
 import logo from '../../images/logo.png';
 import WebIcon from "../icons/WebIcon";
