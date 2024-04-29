@@ -77,7 +77,7 @@ export const Nav = () => {
     const bgStyle= {
         //backgroundColor: scrolledBg ? 'rgba(162, 162, 162, 0.116)' : 'transparent',
         backdropFilter: scrolledBg ? 'blur(10px)' : 'none',
-        backgroundColor: scrolledBg ? "#000000" : 'transparent',
+        backgroundColor: scrolledBg ? "rgba(0, 0, 0, .9)" : 'transparent',
         width: "100%",
         height:"100%",
         zIndex:3,

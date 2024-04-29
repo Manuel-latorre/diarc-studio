@@ -1,49 +1,68 @@
 import { colors } from "@/colors/colors"
-import instagram from '../../images/instagram.png'
-import linkedin from '../../images/linkedin.png'
-import wp from '../../images/wp.png'
-import yt from '../../images/youtube.png'
+import InstagramIcon from "@/components/icons/InstagramIcon"
+import LinkedinIcon from "@/components/icons/LinkedinIcon"
+import WhatsappIcon from "@/components/icons/WhatsappIcon"
+import YoutubeIcon from "@/components/icons/YoutubeIcon"
+import '../globals.css'
+import bgMedia from '../../images/bgSocialMedia.svg'
 
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Footer (){
     return(
-        <div id="contact" className={`w-full h-auto py-5`} style={{backgroundColor:colors.fulldarkgrey}} >
-            <div className="flex">
-                <div className="text-white mt-10 ml-20">
-                    <h2 className="text-5xl">Lets Talk</h2>
-                </div>
-            </div>
-            <div className="flex items-center justify-around mt-20">
-                <div className="flex items-center gap-5 max-lg:flex-col">
-                    <div className="flex flex-col">
-                        <label htmlFor="Email" className="text-white">*Email</label>
-                        <input className="bg-transparent border-b border-gray-300 lg:w-[500px] max-lg:w-[90%]" type="email" />
+        <div id="contact" className="pt-10 pb-4 bg-black">
+            <div className="flex items-center justify-evenly max-xl:flex-wrap">
+                <div>
+                    <p className="text-6xl font-semibold uppercase">let´s</p>
+                    <p className="text-6xl font-semibold uppercase translate-x-24">create</p>
+                    <p className="text-6xl font-semibold uppercase -translate-x-14">together</p>
+                    <div className="mt-12 flex flex-col gap-4">
+                        <input type="text" placeholder="Get in touch" className="border-b-1 bg-black border-b-zinc-600 w-[400px] border-l-0 border-r-0 border-t-0"/>
+                        <p className="ml-12">studio@diarc.ar</p>
+                        <p className="ml-12">+ 54 9 11 7363 2924</p>
+                        <p className="ml-12">877 Luis Maria Campos Avenue, Buenos Aires, Argentina</p>
+                        <div className="flex items-center gap-4 ml-20">
+                            <p className="font-semibold">Find us on</p>
+                            <div className="bgSocialMedia">
+                                <Link href={"https://www.instagram.com/diarc.studio/"} target="_blank">
+                                    <InstagramIcon/>
+                                </Link>
+                                <Link href={"https://www.linkedin.com/company/diarcstudio"} target="_blank">
+                                    <LinkedinIcon/>
+                                </Link>
+                                <Link href={"https://api.whatsapp.com/send/?phone=5491173632924&text&type=phone_number&app_absent=0"} target="_blank">
+                                    <WhatsappIcon/>
+                                </Link>
+                                <Link href={"https://www.youtube.com/channel/UCS679OEsKuiY9I_aFna9hBA"} target="_blank">
+                                    <YoutubeIcon/>
+                                </Link>
+                            </div>
+                        </div>
                     </div>
-                    <button className="px-7 py-2 border border-gray-300 rounded-3xl text-white">Send</button>
-                    <button className="px-7 py-2 border border-gray-300 rounded-3xl text-white">Book a call</button>
                 </div>
-                <div className="px-10 py-16 bg-black rounded-full max-lg:hidden">
-                    <p className="text-white uppercase font-semibold">are you an artist? <br />
-                        brand real state?<br />
-                        do you need a full <br /> experiencie?<br />
-                        lets get in touch!
+                <div className="bgContact">
+                    <p className="text-center font-semibold text-2xl">
+                        ARE YOU READY <br />
+                        TO GET STARTED?
                     </p>
+
+                    <p className="text-center font-extralight text-lg">
+                        Learn more about us and how we <br />
+                        can help you
+                    </p>
+                    
+                        <Link className="bgBookACall" href={"https://calendly.com/arielisaack/diarcstudio?month=2023-10"} target="_blank">
+                            {/* <p className="text-zinc-800 font-semibold text-2xl">Book a call</p> */}
+                        </Link>
+                    
                 </div>
+
             </div>
-            <div className="flex items-center justify-around mt-20 text-white max-md:flex-col max-md:gap-8">
-                <div>
-                    <p>studio@diarc.com</p>
-                </div>
-                <div>
-                    <p>©2023 DIARC Studio.</p>
-                </div>
-                <div className="flex items-center gap-7">
-                    <Image width={40} height={40} src={wp} alt="Whatsapp Icon"/>
-                    <Image width={40} height={40} src={instagram} alt="Instagram Icon"/>
-                    <Image width={40} height={40} src={linkedin} alt="Linkedin Icon"/>
-                    <Image width={40} height={40} src={yt} alt="Youtube Icon"/>
-                </div>
+            <div className="mt-10">
+                <p className="ml-10 text-sm text-zinc-500 translate-y-6">©2024 DIARC Studio</p>
+                <p className="lg:text-xl text-white text-center">We build, <span className="font-bold">digitally</span></p>
+                
             </div>
         </div>
     )

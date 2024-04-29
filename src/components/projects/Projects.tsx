@@ -172,36 +172,33 @@ const buttonClass = (filter:any) =>
           <WebIcon
             className={activeFilter === "web" ? "fill-white" : "fill-zinc-700"}
           />
+          <p className={activeFilter === "web" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>Web</p>
         </button>
         <button
           onClick={() => filterProjects("mobile")}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <MobileIcon
-            className={
-              activeFilter === "mobile" ? "fill-white" : "fill-zinc-700"
-            }
-          />
+            className={activeFilter === "mobile" ? "fill-white" : "fill-zinc-700"}/>
+            <p className={activeFilter === "mobile" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>Mobile</p>
         </button>
         <button
           onClick={() => filterProjects("console")}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <ConsoleIcon
-            className={
-              activeFilter === "console" ? "fill-white" : "fill-zinc-700"
-            }
+            className={activeFilter === "console" ? "fill-white" : "fill-zinc-700"}
           />
+          <p className={activeFilter === "console" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>Console</p>
         </button>
         <button
           onClick={() => filterProjects("desktop")}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <DesktopIcon
-            className={
-              activeFilter === "desktop" ? "fill-white" : "fill-zinc-700"
-            }
+            className={activeFilter === "desktop" ? "fill-white" : "fill-zinc-700"}
           />
+          <p className={activeFilter === "desktop" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>Desktop</p>
         </button>
         <button
           onClick={() => filterProjects("ar")}
@@ -210,6 +207,7 @@ const buttonClass = (filter:any) =>
           <ArIcon
             className={activeFilter === "ar" ? "fill-white" : "fill-zinc-700"}
           />
+          <p className={activeFilter === "ar" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>AR</p>
         </button>
         <button
           onClick={() => filterProjects("vr")}
@@ -218,6 +216,7 @@ const buttonClass = (filter:any) =>
           <VrIcon
             className={activeFilter === "vr" ? "fill-white" : "fill-zinc-700"}
           />
+          <p className={activeFilter === "vr" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>VR</p>
         </button>
       </div>
       <div className="max-xl:w-[65%] mx-auto flex xl:w-[75%]">

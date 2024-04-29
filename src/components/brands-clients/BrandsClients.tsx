@@ -6,7 +6,7 @@ import { InfiniteMovingCards } from "../ui/InfiniteMovingCards";
 export function InfiniteMovingCardsDemo() {
   return (
     <div className="h-[350px] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <h4 className="text-3xl font-bold mb-10">Trusted Partners</h4>
+      <h4 className="text-3xl font-bold mb-7 mt-10">Trusted Partners</h4>
       <InfiniteMovingCards
         items={images}
         direction="right"
