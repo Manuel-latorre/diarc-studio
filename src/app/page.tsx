@@ -19,6 +19,7 @@ export default function Home() {
         <div className="content">
           <Logo/>
         </div>
+        <p className="lg:text-2xl text-white text-center -translate-y-16">We build, <span className="font-bold">digitally</span></p>
         <Mask/>
         <TextIncial/>
         {/* <div id="maskSolutions"></div> */}

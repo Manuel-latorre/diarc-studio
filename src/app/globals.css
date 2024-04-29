@@ -139,6 +139,10 @@
     height: 100vh;
 }
 
+.aboutusImg{
+    mask-image: linear-gradient( to top, rgb(0, 0, 0) 0%,transparent);
+}
+
 @media(max-width:627px){
     #diarc{
         font-size: 80px;
