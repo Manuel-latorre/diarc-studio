@@ -140,7 +140,7 @@
 }
 
 .bgBookACall{
-    background-image: url(../images/bgBookACall.svg);
+    background-image: url(../images/Storke-Menu.svg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 200px;
@@ -163,6 +163,10 @@
     }
     #initialText{
         height: 300px;
+    }
+    .bgContact{
+        width: 330px;
+        height: 330px;
     }
 }
 

@@ -20,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <body className={baijamjuree.className}>
         <Providers>
           <Nav/>

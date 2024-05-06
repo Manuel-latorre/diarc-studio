@@ -1,4 +1,5 @@
 "use client"
+
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperRef, SwiperSlide, useSwiper } from 'swiper/react';
 import { Autoplay, Grid, Navigation, Pagination } from 'swiper/modules';
@@ -31,6 +32,7 @@ import SubstanceDesignerIcon from "../icons/SubstanceDesignerIcon";
 import NextIcon from "../icons/NextIcon";
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
+import Arrow from "./Arrows";
 
 
 async function fetchProjects(): Promise<Project[]> {
@@ -160,6 +162,8 @@ const buttonClass = (filter:any) =>
   const handleCloseGallery = () => {
     setSelectedImage(null);
   };
+
+
   
     
   return (
@@ -172,33 +176,72 @@ const buttonClass = (filter:any) =>
           <WebIcon
             className={activeFilter === "web" ? "fill-white" : "fill-zinc-700"}
           />
-          <p className={activeFilter === "web" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>Web</p>
+          <p
+            className={
+              activeFilter === "web"
+                ? "text-white font-light text-sm text-center"
+                : "text-zinc-700 font-light text-sm text-center"
+            }
+          >
+            Web
+          </p>
         </button>
         <button
           onClick={() => filterProjects("mobile")}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <MobileIcon
-            className={activeFilter === "mobile" ? "fill-white" : "fill-zinc-700"}/>
-            <p className={activeFilter === "mobile" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>Mobile</p>
+            className={
+              activeFilter === "mobile" ? "fill-white" : "fill-zinc-700"
+            }
+          />
+          <p
+            className={
+              activeFilter === "mobile"
+                ? "text-white font-light text-sm text-center"
+                : "text-zinc-700 font-light text-sm text-center"
+            }
+          >
+            Mobile
+          </p>
         </button>
         <button
           onClick={() => filterProjects("console")}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <ConsoleIcon
-            className={activeFilter === "console" ? "fill-white" : "fill-zinc-700"}
+            className={
+              activeFilter === "console" ? "fill-white" : "fill-zinc-700"
+            }
           />
-          <p className={activeFilter === "console" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>Console</p>
+          <p
+            className={
+              activeFilter === "console"
+                ? "text-white font-light text-sm text-center"
+                : "text-zinc-700 font-light text-sm text-center"
+            }
+          >
+            Console
+          </p>
         </button>
         <button
           onClick={() => filterProjects("desktop")}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <DesktopIcon
-            className={activeFilter === "desktop" ? "fill-white" : "fill-zinc-700"}
+            className={
+              activeFilter === "desktop" ? "fill-white" : "fill-zinc-700"
+            }
           />
-          <p className={activeFilter === "desktop" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>Desktop</p>
+          <p
+            className={
+              activeFilter === "desktop"
+                ? "text-white font-light text-sm text-center"
+                : "text-zinc-700 font-light text-sm text-center"
+            }
+          >
+            Desktop
+          </p>
         </button>
         <button
           onClick={() => filterProjects("ar")}
@@ -207,7 +250,15 @@ const buttonClass = (filter:any) =>
           <ArIcon
             className={activeFilter === "ar" ? "fill-white" : "fill-zinc-700"}
           />
-          <p className={activeFilter === "ar" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>AR</p>
+          <p
+            className={
+              activeFilter === "ar"
+                ? "text-white font-light text-sm text-center"
+                : "text-zinc-700 font-light text-sm text-center"
+            }
+          >
+            AR
+          </p>
         </button>
         <button
           onClick={() => filterProjects("vr")}
@@ -216,7 +267,15 @@ const buttonClass = (filter:any) =>
           <VrIcon
             className={activeFilter === "vr" ? "fill-white" : "fill-zinc-700"}
           />
-          <p className={activeFilter === "vr" ? "text-white font-light text-sm text-center" : "text-zinc-700 font-light text-sm text-center"}>VR</p>
+          <p
+            className={
+              activeFilter === "vr"
+                ? "text-white font-light text-sm text-center"
+                : "text-zinc-700 font-light text-sm text-center"
+            }
+          >
+            VR
+          </p>
         </button>
       </div>
       <div className="max-xl:w-[65%] mx-auto flex xl:w-[75%]">
@@ -259,11 +318,14 @@ const buttonClass = (filter:any) =>
                   objectFit="cover"
                   className="z-10"
                 />
-                <div onClick={() => handleOpen(project)} className="absolute border-3 border-black top-0 left-0 w-full h-full after:content-[''] after:absolute after:inset-5 after:border-3 after:border-white after:-z-10 z-10 hover:bg-black hover:bg-opacity-50 transition-all">
+                <div
+                  onClick={() => handleOpen(project)}
+                  className="absolute border-3 border-black top-0 left-0 w-full h-full after:content-[''] after:absolute after:inset-3 after:border-3 after:border-white after:-z-10 z-10 hover:bg-black hover:bg-opacity-50 transition-all"
+                >
                   <Image
-                    className="translate-x-8 translate-y-8"
-                    width={50}
-                    height={50}
+                    className="translate-x-5 translate-y-5 opacity-50"
+                    width={40}
+                    height={40}
                     src={logo}
                     alt="Diarc Logo"
                   />
@@ -272,7 +334,6 @@ const buttonClass = (filter:any) =>
                       {project.title}
                     </h3>
                   </div>
-                  
                 </div>
               </SwiperSlide>
             ))}
@@ -292,7 +353,7 @@ const buttonClass = (filter:any) =>
                       <div className="flex w-full h-full items-center justify-center lg:gap-20">
                         <div className="justify-start max-xl:w-full">
                           {selectedProject && (
-                            <div className="relative mx-auto max-xl:w-[400px] w-[600px] h-screen max-lg:hidden">
+                            <div className="relative mx-auto max-[1156px]:w-[400px] max-xl:w-[600px] w-[700px] h-screen max-lg:hidden">
                               <Image
                                 src={selectedProject.image}
                                 alt={selectedProject.title}
@@ -334,100 +395,135 @@ const buttonClass = (filter:any) =>
                             ))}
                           </div>
                           <div className="flex flex-col justify-end">
-                          <div className="grid grid-cols-6 gap-1">
-                            {selectedProject &&
-                              selectedProject.galleryVideosAndImages.map(
-                                (file, index) => (
-                                  <div
-                                    key={index}
-                                    className=" gap-1"
-                                    onClick={() => handleImageClick(file)}
-                                  >
-                                    {file.endsWith(".webm") ? (
-                                      <video
-                                        autoPlay
-                                        controls
-                                        loop
-                                        muted
-                                        className="w-full h-full"
-                                      >
-                                        <source src={file} type="video/webm" />
-                                      </video>
-                                    ) : (
-                                      <img
-                                        src={file}
-                                        alt="image"
-                                        className="w-full h-full cursor-pointer"
-                                      />
-                                    )}
-                                  </div>
-                                )
-                              )}
-                          </div>
-                          <div className="flex flex-col justify-center text-center gap-8 mt-14">
-                        <p className="text-2xl font-normal">Technology Stack</p>
-                          <div className="flex items-center gap-5 flex-wrap justify-center">
-                            {(
-                              (selectedProject?.technologies ||
-                                []) as Technologies[]
-                            ).map((item, index) => (
-                              <React.Fragment key={index}>
-                                {renderIconTechnologies(item)}
-                                {index <
-                                  (selectedProject?.technologies || []).length - 1}
-                              </React.Fragment>
-                            ))}
-                          </div>
-                        </div>
-                         
-                          {selectedImage && (
-                            <>
-                            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50">
-                              <div ref={modalRef} className="w-[70%] h-[80%] mx-auto">
-                                <div
-                                  ref={sliderRef}
-                                  className="keen-slider relative"
-                                >
-                                  {selectedProject &&
-                                    selectedProject.galleryVideosAndImages.map(
-                                      (file, index) => (
-                                        <div
-                                          key={index}
-                                          className="keen-slider__slide"
-                                          onClick={() => handleImageClick(file)}
+                            <div className="grid grid-cols-5 gap-1">
+                              {selectedProject &&
+                                selectedProject.galleryVideosAndImages.map(
+                                  (file, index) => (
+                                    <div
+                                      key={index}
+                                      className=" gap-1"
+                                      onClick={() => handleImageClick(file)}
+                                    >
+                                      {file.endsWith(".webm") ? (
+                                        <video
+                                          autoPlay
+                                          controls
+                                          loop
+                                          muted
+                                          className="w-full h-full"
                                         >
-                                          {file.endsWith(".webm") ? (
-                                            <video
-                                              autoPlay
-                                              controls
-                                              loop
-                                              muted
-                                              className="w-full h-full"
-                                            >
-                                              <source
-                                                src={file}
-                                                type="video/webm"
-                                              />
-                                            </video>
-                                          ) : (
-                                            <img
-                                              src={file}
-                                              alt="image"
-                                              className="w-full h-full cursor-pointer"
-                                            />
-                                          )}
-                                        </div>
-                                      )
-                                    )}
-                                </div>
-                              </div>
-
+                                          <source
+                                            src={file}
+                                            type="video/webm"
+                                          />
+                                        </video>
+                                      ) : (
+                                        <img
+                                          src={file}
+                                          alt="image"
+                                          className="w-full h-full cursor-pointer"
+                                        />
+                                      )}
+                                    </div>
+                                  )
+                                )}
                             </div>
-                            </>
-                          )}
+                            <div className="flex flex-col justify-center text-center gap-8 mt-14">
+                              <p className="text-2xl font-normal">
+                                Technology Stack
+                              </p>
+                              <div className="flex items-center gap-5 flex-wrap justify-center">
+                                {(
+                                  (selectedProject?.technologies ||
+                                    []) as Technologies[]
+                                ).map((item, index) => (
+                                  <React.Fragment key={index}>
+                                    {renderIconTechnologies(item)}
+                                    {index <
+                                      (selectedProject?.technologies || [])
+                                        .length -
+                                        1}
+                                  </React.Fragment>
+                                ))}
+                              </div>
+                            </div>
+
+                            {selectedImage && (
+                              <>
+                                <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50">
+                                  <div
+                                    ref={modalRef}
+                                    className="w-[70%] h-[80%] mx-auto"
+                                  >
+                                    <div
+                                      ref={sliderRef}
+                                      className="keen-slider relative"
+                                    >
+                                      {selectedProject &&
+                                        selectedProject.galleryVideosAndImages.map(
+                                          (file, index) => (
+                                            <div
+                                              key={index}
+                                              className="keen-slider__slide"
+                                              onClick={() =>
+                                                handleImageClick(file)
+                                              }
+                                            >
+                                              {file.endsWith(".webm") ? (
+                                                <video
+                                                  autoPlay
+                                                  controls
+                                                  loop
+                                                  muted
+                                                  className="w-full h-full"
+                                                >
+                                                  <source
+                                                    src={file}
+                                                    type="video/webm"
+                                                  />
+                                                </video>
+                                              ) : (
+                                                <img
+                                                  src={file}
+                                                  alt="image"
+                                                  className="w-full h-full cursor-pointer"
+                                                />
+                                              )}
+                                            </div>
+                                          )
+                                        )}
+                                      {loaded && instanceRef.current && (
+                                        <>
+                                          <Arrow
+                                            left
+                                            onClick={(e: any) =>
+                                              e.stopPropagation() ||
+                                              instanceRef.current?.prev()
+                                            }
+                                            disabled={currentSlide === 0}
+                                          />
+
+                                          <Arrow
+                                            onClick={(e: any) =>
+                                              e.stopPropagation() ||
+                                              instanceRef.current?.next()
+                                            }
+                                            disabled={
+                                              currentSlide ===
+                                              instanceRef.current.track.details
+                                                .slides.length -
+                                                1
+                                            }
+                                          />
+                                        </>
+                                      )}
+                                    </div>
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </div>
                         </div>
-                        </div>
-                        
                       </div>
                     </ModalBody>
                   </>

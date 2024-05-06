@@ -10,8 +10,8 @@ const navLinks1 = [
 ];
 
 const navLinks2 = [
-    {path: '/#contact', text: 'Contact'},
-    {path: '/#aboutus', text: 'About us'},
+  {path: '/#aboutus', text: 'About us'},
+  {path: '/#contact', text: 'Contact'},
 ];
 
 export const Nav = () => {
@@ -69,7 +69,7 @@ export const Nav = () => {
 };
 
   const middleDivStyle = {
-      width: scrolled ? '350px' : '50px',
+      width: scrolled ? '200px' : '50px',
       transition: 'width 0.3s ease-in-out',
       zIndex: 2,
     };

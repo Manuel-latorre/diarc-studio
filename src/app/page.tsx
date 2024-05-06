@@ -7,6 +7,7 @@ import Portfolio from "./portfolio/page";
 import AboutUs from "./about-us/page";
 import TextIncial from "./text/page";
 import SolutionsPage from "./solutions/page";
+import WeBuildDigitally from "@/components/ui/WeBuildDigitally";
 
 export default function Home() {
 
@@ -27,6 +28,9 @@ export default function Home() {
         {/* <div id="maskBottomSolutions"></div> */}
 
           <Portfolio/>
+          <div className="pb-0 pt-32">
+            <WeBuildDigitally/>
+          </div>
           <AboutUs/>
         
         <Footer/>
