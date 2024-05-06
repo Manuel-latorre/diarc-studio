@@ -11,7 +11,7 @@ export default function TextIncial (){
           development for Immersive Experiences, Metaverse, and Gaming.
         </p>
 
-        <p className="lg:text-2xl text-white text-center translate-y-36 max-md:translate-y-12">We build, <span className="font-bold">digitally</span></p>
+        <p className="lg:text-2xl text-white text-center translate-y-40 max-md:translate-y-24">We build, <span className="font-bold">digitally</span></p>
       </div>
     );
 }

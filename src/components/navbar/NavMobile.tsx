@@ -27,7 +27,7 @@ export const NavMobile = () => {
 
     return (
       <Navbar
-        className="lg:hidden bg-transparent w-full fixed h-[120px] top-0"
+        className="lg:hidden bg-transparent w-full fixed h-[100px] top-0"
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
       >

@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../images/logoNavbar1.png"
 
 export const Logo = () => {
   const navbarHeight = 50;
   const [scrollY, setScrollY] = useState(0);
   const [scale, setScale] = useState(1);
   const [windowHeight, setWindowHeight] = useState(0); // Default height
+  const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
     setWindowHeight(window.innerHeight); // Set initial height on client
@@ -26,7 +29,14 @@ export const Logo = () => {
           )
         : 1;
       setScale(newScale);
+
+      if (scrollOffset === 0) {
+        setShowImage(true);
+      } else {
+        setShowImage(false);
+      }
     };
+
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -43,16 +53,22 @@ export const Logo = () => {
   return (
     <div className="z-30 max-lg:z-40">
       <div className="w-full h-full flex justify-center items-center">
-        <div style={imageStyle}>
-          <Link href={"/"}>
-            <div className="flex flex-col items-center text-center">
-              <h1 id="diarc">DIARC</h1>
-              <p id="studio" className="tracking-[72px] text-4xl text-white ml-20">
-                STUDIO
-              </p>
+        {showImage ? (
+            <div style={imageStyle}>
+              <Link href={"/"}>
+                <div className="flex flex-col items-center text-center">
+                  <h1 id="diarc">DIARC</h1>
+                  <p id="studio" className="tracking-[72px] text-4xl text-white ml-20">
+                    STUDIO
+                  </p>
+                </div>
+              </Link>
             </div>
-          </Link>
-        </div>
+        ) : (
+          <div style={imageStyle}>
+            <Image width={300} height={300} src={logo} alt="logo"/>
+          </div>
+        )}
       </div>
     </div>
   );

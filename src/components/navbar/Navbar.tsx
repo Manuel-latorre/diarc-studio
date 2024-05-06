@@ -83,10 +83,6 @@ export const Nav = () => {
         zIndex:3,
     }
 
-
-
-
-
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
         e.preventDefault();
         const newActiveLinks: { [key: string]: boolean } = {};
@@ -112,11 +108,11 @@ export const Nav = () => {
 
     return (
       <nav
-        className="w-full h-[120px] flex items-center justify-center fixed z-30 max-lg:hidden"
+        className="w-full h-[100px] flex items-center justify-center fixed z-30 max-lg:hidden"
         style={navbarStyle}
       >
         <div style={bgStyle} className="flex items-center justify-center bg-style w-screen h-full">
-          <div className="flex gap-7 flex-1 justify-end z-30 max-lg:hidden">
+          <div className="flex flex-1 justify-end z-30 max-lg:hidden">
             {navLinks1.map((navlink) => (
               <ActiveLinks
                 key={navlink.path}
@@ -130,7 +126,7 @@ export const Nav = () => {
 
           <div style={middleDivStyle}></div>
 
-          <div className="flex gap-7 flex-1 justify-start z-30 max-lg:hidden">
+          <div className="flex flex-1 justify-start z-30 max-lg:hidden">
             {navLinks2.map((navlink) => (
               <ActiveLinks
                 key={navlink.path}

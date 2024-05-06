@@ -365,7 +365,7 @@ const buttonClass = (filter:any) =>
                               )}
                           </div>
                           <div className="flex flex-col justify-center text-center gap-8 mt-14">
-                        <p className="text-2xl font-bold">Technology Stack</p>
+                        <p className="text-2xl font-normal">Technology Stack</p>
                           <div className="flex items-center gap-5 flex-wrap justify-center">
                             {(
                               (selectedProject?.technologies ||
