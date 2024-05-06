@@ -167,8 +167,9 @@ const buttonClass = (filter:any) =>
   
     
   return (
-    <div className="bg-black flex justify-center mt-[10%] h-screen max-sm:hidden">
-      <div className="flex flex-col justify-center gap-2 px-10 z-20 items-center mx-auto">
+    <div className="">
+      <div className="bg-black flex justify-center mt-[10%] h-screen max-md:h-[400px]">
+      <div className="flex flex-col justify-center gap-2 px-10 z-20 items-center mx-auto max-md:hidden">
         <button
           onClick={() => filterProjects("web")}
           className={buttonClass("web")}
@@ -278,38 +279,59 @@ const buttonClass = (filter:any) =>
           </p>
         </button>
       </div>
-      <div className="max-xl:w-[65%] mx-auto flex xl:w-[75%]">
+      <div className="max-xl:w-[65%] mx-auto flex xl:w-[75%] max-md:w-[90%]">
         <>
           <Swiper
+            navigation={true}
+          //   style={{
+          //      "--swiper-pagination-color": "#e5e60e",
+          //      "--swiper-pagination-bullet-inactive-color": "#999999",
+          //      "--swiper-pagination-bullet-inactive-opacity": "1",
+          //      "--swiper-pagination-bullet-size": "12px",
+          //      "--swiper-pagination-bullet-horizontal-gap": "6px"
+          //  }}
             breakpoints={{
               1536: {
                 slidesPerView: 4,
                 spaceBetween: 20,
+                grid: {
+                  rows: 3,
+                },
               },
               1280: {
                 slidesPerView: 3,
                 spaceBetween: 15,
+                grid: {
+                  rows: 3,
+                },
               },
               1024: {
                 slidesPerView: 2,
                 spaceBetween: 10,
+                grid: {
+                  rows: 3,
+                },
               },
               768: {
                 slidesPerView: 1,
                 spaceBetween: 10,
+                grid: {
+                  rows: 2,
+                },
               },
             }}
             grid={{
-              rows: 3,
+              rows: 1,
             }}
-            modules={[Grid]}
-            className="mySwiper flex"
+            // pagination={true}
+            modules={[Grid, Navigation, Pagination]}
+            className="mySwiper flex pb-12"
             ref={swiperRef}
           >
             {filteredProjects.map((project) => (
               <SwiperSlide
                 key={project._id}
-                className="cursor-pointer hover:scale-105 transition duration-75"
+                className="cursor-pointer md:hover:scale-105 transition duration-75"
               >
                 <Image
                   src={project.image}
@@ -533,13 +555,15 @@ const buttonClass = (filter:any) =>
           </Swiper>
         </>
 
-        <div className="shadoSwiper"></div>
-        <div className="flex flex-col justify-center -translate-x-10 w-[10%] mx-auto">
+        <div className="shadoSwiper max-md:hidden"></div>
+        <div className="flex flex-col justify-center -translate-x-10 w-[10%] mx-auto max-md:hidden">
           <button onClick={clickNext}>
             <NextIcon />
           </button>
         </div>
       </div>
+      </div>
+
     </div>
   );
 }

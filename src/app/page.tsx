@@ -24,10 +24,11 @@ export default function Home() {
         <Mask/>
         <TextIncial/>
         {/* <div id="maskSolutions"></div> */}
-          <SolutionsPage/>
+          {/* <SolutionsPage/> */}
         {/* <div id="maskBottomSolutions"></div> */}
 
           <Portfolio/>
+          
           <div className="pb-0 pt-32">
             <WeBuildDigitally/>
           </div>
