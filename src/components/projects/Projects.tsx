@@ -328,7 +328,7 @@ const buttonClass = (filter:any) =>
               clickable: true,
               dynamicBullets: true,
               renderBullet: function (index, className) {
-                return '<span class="' + className + '" style="background-color: ' + (index === this?.activeIndex ? '#e5e60e' : '#e5e60e') + ';"></span>';
+                return '<span class="' + className + '" style="background-color: ' + '#e5e60e'+ ';"></span>';
               },
             }}
             modules={[Grid, Navigation, Pagination]}
