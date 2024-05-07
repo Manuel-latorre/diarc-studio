@@ -61,7 +61,7 @@ export default function Footer (){
             </div>
             <div className="mt-10">
                 <p className="lg:text-xl text-white text-center">We build, <span className="font-bold">digitally</span></p>
-                <p className="ml-10 text-sm text-zinc-500 sm:translate-y-6">©2024 DIARC Studio</p>
+                <p className="md:ml-10 text-sm text-zinc-500 sm:translate-y-6 max-md:text-center max-md:mt-4">©2024 DIARC Studio</p>
                 
             </div>
         </div>

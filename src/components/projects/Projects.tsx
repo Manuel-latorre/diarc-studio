@@ -87,12 +87,12 @@ export const Projects = () => {
   
   
   const iconMapping: Record<AvailableIn, JSX.Element> = {
-    web: <WebIcon className="fill-white"/>,
-    mobile: <MobileIcon className="fill-white"/>,
-    vr: <VrIcon className="fill-white"/>,
-    ar: <ArIcon className="fill-white"/>,
-    console: <ConsoleIcon className="fill-white"/>,
-    desktop: <DesktopIcon className="fill-white"/>
+    web: <WebIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    mobile: <MobileIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    vr: <VrIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    ar: <ArIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    console: <ConsoleIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    desktop: <DesktopIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>
   };
 
   type Technologies = 'unrealengine' | 'maya' | 'roblox' | 'cinema' | 'zbrush' | 'substancePainter' | 'substanceDesigner' | 'adobe' | 'unity' | 'blender' | 'chaosvr' | 'dsmax';
