@@ -163,9 +163,6 @@ const buttonClass = (filter:any) =>
   const handleCloseGallery = () => {
     setSelectedImage(null);
   };
-
-  const isMobile = window.innerWidth <= 768;
-  // const activeIndex = swiper?.activeIndex;
     
   return (
     <div className="">
