@@ -90,7 +90,7 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             key={idx}
-            className="w-[300px] max-w-full relative rounded-2xl flex-shrink-0 px-8 py-6"
+            className="w-[300px] max-md:[w-200px] max-w-full relative rounded-2xl flex-shrink-0 px-8 py-6"
             
             
           >
@@ -99,7 +99,7 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-                <Image width={300} height={300} src={item.image} alt="IMage"/>
+                <Image width={200} height={200} src={item.image} alt="IMage"/>
             </blockquote>
           </li>
         ))}

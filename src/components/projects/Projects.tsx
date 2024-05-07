@@ -7,6 +7,7 @@ import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDi
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import './styles.css';
 import '../../app/globals.css'
 import Image from "next/image";
@@ -163,8 +164,8 @@ const buttonClass = (filter:any) =>
     setSelectedImage(null);
   };
 
-
-  
+  const isMobile = window.innerWidth <= 768;
+  // const activeIndex = swiper?.activeIndex;
     
   return (
     <div className="">
@@ -282,7 +283,6 @@ const buttonClass = (filter:any) =>
       <div className="max-xl:w-[65%] mx-auto flex xl:w-[75%] max-md:w-[90%]">
         <>
           <Swiper
-            navigation={true}
           //   style={{
           //      "--swiper-pagination-color": "#e5e60e",
           //      "--swiper-pagination-bullet-inactive-color": "#999999",
@@ -323,7 +323,14 @@ const buttonClass = (filter:any) =>
             grid={{
               rows: 1,
             }}
-            // pagination={true}
+            // navigation={isMobile ? true : false}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+              renderBullet: function (index, className) {
+                return '<span class="' + className + '" style="background-color: ' + (index === this?.activeIndex ? '#e5e60e' : '#e5e60e') + ';"></span>';
+              },
+            }}
             modules={[Grid, Navigation, Pagination]}
             className="mySwiper flex pb-12"
             ref={swiperRef}
@@ -397,10 +404,10 @@ const buttonClass = (filter:any) =>
                         </div>
 
                         <div className="flex flex-col items-center gap-4 z-50 py-10 lg:pr-5">
-                          <p className="font-semibold text-3xl text-center max-2xl:text-2xl">
+                          <p className="font-semibold text-3xl text-center max-2xl:text-2xl max-md:text-xl">
                             {selectedProject?.title}
                           </p>
-                          <p className="text-2xl text-center max-2xl:text-xl">
+                          <p className="text-2xl text-center max-2xl:text-xl max-md:text-base">
                             {selectedProject?.description}
                           </p>
                           <div className="flex items-center justify-center gap-4 my-10 flex-wrap">
@@ -451,7 +458,7 @@ const buttonClass = (filter:any) =>
                                 )}
                             </div>
                             <div className="flex flex-col justify-center text-center gap-8 mt-14">
-                              <p className="text-2xl font-normal">
+                              <p className="text-2xl font-normal max-md:text-xl">
                                 Technology Stack
                               </p>
                               <div className="flex items-center gap-5 flex-wrap justify-center">
@@ -475,7 +482,7 @@ const buttonClass = (filter:any) =>
                                 <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50">
                                   <div
                                     ref={modalRef}
-                                    className="w-[70%] h-[80%] mx-auto"
+                                    className="w-[70%] h-[80%] mx-auto max-md:w-[90%] max-md:h-[50%]"
                                   >
                                     <div
                                       ref={sliderRef}

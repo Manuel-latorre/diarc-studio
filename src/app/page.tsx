@@ -21,11 +21,13 @@ export default function Home() {
           <Logo/>
         </div>
         <p className="lg:text-2xl text-white text-center -translate-y-16">We build, <span className="font-bold">digitally</span></p>
-        <Mask/>
+        <div className="-translate-y-8 max-lg:-translate-y-4">
+          <Mask/>
+        </div>
         <TextIncial/>
-        {/* <div id="maskSolutions"></div> */}
-          {/* <SolutionsPage/> */}
-        {/* <div id="maskBottomSolutions"></div> */}
+        {/* <div id="maskSolutions"></div>
+          <SolutionsPage/>
+        <div id="maskBottomSolutions"></div> */}
 
           <Portfolio/>
           
