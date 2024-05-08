@@ -280,13 +280,13 @@ const buttonClass = (filter:any) =>
       <div className="max-xl:w-[65%] mx-auto flex xl:w-[75%] max-md:w-[90%]">
         <>
           <Swiper
-          //   style={{
-          //      "--swiper-pagination-color": "#e5e60e",
-          //      "--swiper-pagination-bullet-inactive-color": "#999999",
-          //      "--swiper-pagination-bullet-inactive-opacity": "1",
-          //      "--swiper-pagination-bullet-size": "12px",
-          //      "--swiper-pagination-bullet-horizontal-gap": "6px"
-          //  }}
+            // style={{
+            //    "--swiper-pagination-color": "#e5e60e",
+            //    "--swiper-pagination-bullet-inactive-color": "#999999",
+            //    "--swiper-pagination-bullet-inactive-opacity": "1",
+            //    "--swiper-pagination-bullet-size": "12px",
+            //    "--swiper-pagination-bullet-horizontal-gap": "6px",
+            // }}
             breakpoints={{
               1536: {
                 slidesPerView: 4,
@@ -325,17 +325,17 @@ const buttonClass = (filter:any) =>
               clickable: true,
               dynamicBullets: true,
               renderBullet: function (index, className) {
-                return '<span class="' + className + '" style="background-color: ' + '#e5e60e'+ ';"></span>';
+                return '<span class="' + className + '" style="background-color: #e5e60e;"></span>';
               },
             }}
             modules={[Grid, Navigation, Pagination]}
-            className="mySwiper flex pb-16"
+            className="mySwiper flex"
             ref={swiperRef}
           >
             {filteredProjects.map((project) => (
               <SwiperSlide
                 key={project._id}
-                className="cursor-pointer md:hover:scale-105 transition duration-75"
+                className="cursor-pointer md:hover:scale-105 transition duration-75 -translate-y-10"
               >
                 <Image
                   src={project.image}
