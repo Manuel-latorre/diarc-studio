@@ -329,13 +329,13 @@ const buttonClass = (filter:any) =>
               },
             }}
             modules={[Grid, Navigation, Pagination]}
-            className="mySwiper flex"
+            className="mySwiper flex pb-10"
             ref={swiperRef}
           >
             {filteredProjects.map((project) => (
               <SwiperSlide
                 key={project._id}
-                className="cursor-pointer md:hover:scale-105 transition duration-75 -translate-y-10"
+                className="cursor-pointer md:hover:scale-105 transition duration-75"
               >
                 <Image
                   src={project.image}
