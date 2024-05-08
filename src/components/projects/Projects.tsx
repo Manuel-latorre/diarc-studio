@@ -329,7 +329,7 @@ const buttonClass = (filter:any) =>
               },
             }}
             modules={[Grid, Navigation, Pagination]}
-            className="mySwiper flex pb-12"
+            className="mySwiper flex pb-14"
             ref={swiperRef}
           >
             {filteredProjects.map((project) => (
