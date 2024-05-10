@@ -42,6 +42,7 @@
     background-color: rgba(0, 0, 0, .8);
 }
 
+
 .video{
     width: 100%;
     height: 100%;
@@ -57,6 +58,8 @@
     flex-direction: column;
     justify-content: center;
 }
+
+
 
 
 #initialText{
@@ -86,19 +89,6 @@
     transform: translateX(-400px);
 }
 
-.bgSolutions{
-    background-image: url(../images/bgSolutions.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.571);
-    width: 100%; 
-    height: 100vh;
-    margin-top: 20%;   
-    display: flex;
-    justify-content: end;
-}
 
 .bgService{
     padding: 10px;

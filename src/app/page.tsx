@@ -25,15 +25,17 @@ export default function Home() {
           <Mask/>
         </div>
         <TextIncial/>
-        {/* <div id="maskSolutions"></div>
+        <div id="maskSolutions"></div>
           <SolutionsPage/>
-        <div id="maskBottomSolutions"></div> */}
+        <div id="maskBottomSolutions"></div>
+          <div className="mt-20">
+            <Portfolio/>
 
-          <Portfolio/>
-          
-          <div className="pb-0 pt-32">
-            <WeBuildDigitally/>
           </div>
+          
+          {/* <div className="pb-0 pt-32">
+            <WeBuildDigitally/>
+          </div> */}
           <AboutUs/>
         
         <Footer/>

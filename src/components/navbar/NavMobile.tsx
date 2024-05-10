@@ -13,15 +13,6 @@ const navLinks = [
     {path: '/#aboutus', text: 'About us'},
 ]
 
-const menuItems = [
-  "¿Qué es Tualo?",
-  "¿Cómo funciona?",
-  "¿Quines somos?",
-  "Beneficios",
-  "Blog",
-  "Preguntas frecuentes",
-];
-
 export const NavMobile = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
