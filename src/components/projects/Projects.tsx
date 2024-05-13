@@ -87,12 +87,12 @@ export const Projects = () => {
   
   
   const iconMapping: Record<AvailableIn, JSX.Element> = {
-    web: <WebIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    mobile: <MobileIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    vr: <VrIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    ar: <ArIcon className="fill-white max-md:w-[42px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    console: <ConsoleIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    desktop: <DesktopIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>
+    web: <WebIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
+    mobile: <MobileIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[65px] lg:w-[60px] lg:h-[60px]"/>,
+    vr: <VrIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
+    ar: <ArIcon className="fill-white max-md:w-[42px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
+    console: <ConsoleIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
+    desktop: <DesktopIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>
   };
 
   type Technologies = 'unrealengine' | 'maya' | 'roblox' | 'cinema' | 'zbrush' | 'substancePainter' | 'substanceDesigner' | 'adobe' | 'unity' | 'blender' | 'chaosvr' | 'dsmax';
