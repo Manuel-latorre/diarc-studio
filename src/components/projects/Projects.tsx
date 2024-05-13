@@ -51,6 +51,7 @@ export const Projects = () => {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [selectedFilters, setSelectedFilters] = useState<Set<string>>(new Set());
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -63,12 +64,29 @@ export const Projects = () => {
   })
 
   const filterProjects = (platform: string) => {
-    setActiveFilter(platform);
+    const updatedFilters = new Set(selectedFilters);
+    if (updatedFilters.has(platform)) {
+      updatedFilters.delete(platform); // Si el filtro ya está seleccionado, quitarlo
+    } else {
+      updatedFilters.add(platform); // Si el filtro no está seleccionado, agregarlo
+    }
+    setSelectedFilters(updatedFilters);
+  
+    // Filtrar proyectos basados en los filtros seleccionados
     const filteredProjects = projects.filter((project: Project) =>
-      project.availableIn.includes(platform)
+      [...updatedFilters].every(filter => project.availableIn.includes(filter))
     );
-    setFilteredProjects(filteredProjects); // Actualizar el estado con proyectos filtrados
+    setFilteredProjects(filteredProjects);
   };
+  
+  const isFilterSelected = (platform: string) => {
+    return selectedFilters.has(platform);
+  };
+  
+  const buttonClass = (filter:any) =>
+    isFilterSelected(filter)
+      ? "p-2 hover:scale-105 transition duration-75 fill-zinc-700" // Si el filtro está seleccionado, aplicar estilo con el color deseado
+      : "p-2 hover:scale-105 transition duration-75 fill-white";
 
   const handleOpen = (project:any) => {
     setSelectedProject(project);
@@ -122,11 +140,6 @@ const renderIcon = (availableIn: AvailableIn) => {
   return IconComponent ? IconComponent : null;
 };
 
-const buttonClass = (filter:any) =>
-  activeFilter === filter
-    ? "p-2 hover:scale-105 transition duration-75"
-    : "p-2 hover:scale-105 transition duration-75";
-
     
     const swiperRef = useRef<SwiperRef>(null);
   const clickNext = () => {
@@ -170,18 +183,12 @@ const buttonClass = (filter:any) =>
       <div className="flex flex-col justify-center gap-2 px-10 z-20 items-center mx-auto max-md:hidden">
         <button
           onClick={() => filterProjects("web")}
-          className={buttonClass("web")}
+          className="p-2 hover:scale-105 transition duration-75"
         >
           <WebIcon
-            className={activeFilter === "web" ? "fill-white" : "fill-zinc-700"}
+            className={buttonClass("web")}
           />
-          <p
-            className={
-              activeFilter === "web"
-                ? "text-white font-light text-sm text-center"
-                : "text-zinc-700 font-light text-sm text-center"
-            }
-          >
+          <p className={"text-zinc-400 font-light text-sm text-center"}>
             Web
           </p>
         </button>
@@ -190,9 +197,7 @@ const buttonClass = (filter:any) =>
           className="p-2 hover:scale-105 transition duration-75"
         >
           <MobileIcon
-            className={
-              activeFilter === "mobile" ? "fill-white" : "fill-zinc-700"
-            }
+            className={buttonClass("mobile")}
           />
           <p
             className={
@@ -209,9 +214,7 @@ const buttonClass = (filter:any) =>
           className="p-2 hover:scale-105 transition duration-75"
         >
           <ConsoleIcon
-            className={
-              activeFilter === "console" ? "fill-white" : "fill-zinc-700"
-            }
+            className={buttonClass("console")}
           />
           <p
             className={
@@ -228,9 +231,7 @@ const buttonClass = (filter:any) =>
           className="p-2 hover:scale-105 transition duration-75"
         >
           <DesktopIcon
-            className={
-              activeFilter === "desktop" ? "fill-white" : "fill-zinc-700"
-            }
+            className={buttonClass("desktop")}
           />
           <p
             className={
@@ -247,7 +248,7 @@ const buttonClass = (filter:any) =>
           className="p-2 hover:scale-105 transition duration-75"
         >
           <ArIcon
-            className={activeFilter === "ar" ? "fill-white" : "fill-zinc-700"}
+            className={buttonClass("ar")}
           />
           <p
             className={
@@ -264,7 +265,7 @@ const buttonClass = (filter:any) =>
           className="p-2 hover:scale-105 transition duration-75"
         >
           <VrIcon
-            className={activeFilter === "vr" ? "fill-white" : "fill-zinc-700"}
+            className={buttonClass("vr")}
           />
           <p
             className={
