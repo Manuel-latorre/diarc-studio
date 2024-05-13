@@ -12,17 +12,18 @@ export const Logo = () => {
   const [scale, setScale] = useState(1);
   const [windowHeight, setWindowHeight] = useState(0); // Default height
   const [showImage, setShowImage] = useState(false);
+  const [scrolledDown, setScrolledDown] = useState(false); // Nuevo estado para rastrear si el usuario ha hecho scroll hacia abajo
 
   useEffect(() => {
     setWindowHeight(window.innerHeight); // Set initial height on client
-
+  
     const handleScroll = () => {
       const scrollOffset = window.scrollY;
       setScrollY(scrollOffset);
-
+  
       const threshold = windowHeight * 0.25;
       const scaleDownEnd = windowHeight * 0.75;
-
+  
       const newScale = scrollOffset > threshold
         ? Math.max(
             0.4,
@@ -30,18 +31,17 @@ export const Logo = () => {
           )
         : 1;
       setScale(newScale);
-
-      if (scrollOffset === 0) {
-        setShowImage(true);
-      } else {
-        setShowImage(false);
+  
+      if (scrollOffset > 0 && !scrolledDown) {
+        setScrolledDown(true); // Cambiar a true cuando el usuario hace scroll hacia abajo por primera vez
+      } else if (scrollOffset === 0 && scrolledDown) {
+        setScrolledDown(false); // Cambiar a false cuando el usuario ha vuelto al principio de la página
       }
     };
-
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [windowHeight]); // Depend on windowHeight
+  }, [windowHeight, scrolledDown]); // Depend on windowHeight and scrolledDown Solo se ejecuta una vez al cargar la página
 
   const imageStyle = {
     position: "fixed" as "fixed",
@@ -54,16 +54,16 @@ export const Logo = () => {
   return (
     <div className="z-30 max-lg:z-40" id="home">
       <div className="w-full h-full flex justify-center items-center">
-        {showImage ? (
-            <div style={imageStyle}>
-              <Link href={"/"}>
-                <Image src={diarc} width={400} height={400} alt="Diarc logo"/>
-              </Link>
-            </div>
+        {scrolledDown ? ( // Cambiado a scrolledDown para determinar qué imagen mostrar
+          <div style={imageStyle}>
+            <Link href={"/"}>
+              <Image src={logo} width={200} height={200} alt="Diarc logo al scrollear"/>
+            </Link>
+          </div>
         ) : (
           <div style={imageStyle}>
             <Link href={"/"}>
-              <Image width={200} height={200} src={logo} alt="Diarc logo"/>
+              <Image src={diarc} width={400} height={400} alt="Diarc logo inicial"/>
             </Link>
           </div>
         )}
