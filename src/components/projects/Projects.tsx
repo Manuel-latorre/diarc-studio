@@ -1,6 +1,6 @@
 "use client"
 
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperRef, SwiperSlide, useSwiper } from 'swiper/react';
 import { Autoplay, Grid, Navigation, Pagination } from 'swiper/modules';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, ScrollShadow} from "@nextui-org/react";
@@ -200,11 +200,7 @@ const renderIcon = (availableIn: AvailableIn) => {
             className={buttonClass("mobile")}
           />
           <p
-            className={
-              activeFilter === "mobile"
-                ? "text-white font-light text-sm text-center"
-                : "text-zinc-700 font-light text-sm text-center"
-            }
+            className={"text-zinc-400 font-light text-sm text-center"}
           >
             Mobile
           </p>
@@ -217,11 +213,7 @@ const renderIcon = (availableIn: AvailableIn) => {
             className={buttonClass("console")}
           />
           <p
-            className={
-              activeFilter === "console"
-                ? "text-white font-light text-sm text-center"
-                : "text-zinc-700 font-light text-sm text-center"
-            }
+            className={"text-zinc-400 font-light text-sm text-center"}
           >
             Console
           </p>
@@ -234,11 +226,7 @@ const renderIcon = (availableIn: AvailableIn) => {
             className={buttonClass("desktop")}
           />
           <p
-            className={
-              activeFilter === "desktop"
-                ? "text-white font-light text-sm text-center"
-                : "text-zinc-700 font-light text-sm text-center"
-            }
+            className={"text-zinc-400 font-light text-sm text-center"}
           >
             Desktop
           </p>
@@ -251,11 +239,7 @@ const renderIcon = (availableIn: AvailableIn) => {
             className={buttonClass("ar")}
           />
           <p
-            className={
-              activeFilter === "ar"
-                ? "text-white font-light text-sm text-center"
-                : "text-zinc-700 font-light text-sm text-center"
-            }
+            className={"text-zinc-400 font-light text-sm text-center"}
           >
             AR
           </p>
@@ -268,11 +252,7 @@ const renderIcon = (availableIn: AvailableIn) => {
             className={buttonClass("vr")}
           />
           <p
-            className={
-              activeFilter === "vr"
-                ? "text-white font-light text-sm text-center"
-                : "text-zinc-700 font-light text-sm text-center"
-            }
+            className={"text-zinc-400 font-light text-sm text-center"}
           >
             VR
           </p>
