@@ -14,10 +14,10 @@ export default function Footer (){
         <div id="contact" className="pt-10 pb-4 bg-black">
             <div className="flex items-center justify-evenly max-md:flex-col max-md:justify-center max-lg:flex-wrap">
                 <div>
-                    <p className="text-6xl font-semibold uppercase max-md:px-2">let´s</p>
-                    <p className="text-6xl font-semibold uppercase max-md:px-2 md:translate-x-24">create</p>
-                    <p className="text-6xl font-semibold uppercase max-md:px-2 md:-translate-x-14">together</p>
-                    <div className="mt-12 flex flex-col gap-4 max-md:px-4">
+                    <p className="text-6xl font-semibold uppercase max-md:px-2 max-md:text-4xl">let´s</p>
+                    <p className="text-6xl font-semibold uppercase max-md:px-2 md:translate-x-24 max-md:text-4xl">create</p>
+                    <p className="text-6xl font-semibold uppercase max-md:px-2 md:-translate-x-14 max-md:text-4xl">together</p>
+                    <div className="mt-12 flex flex-col gap-4 max-md:px-4 max-md:mt-8">
                         <input type="text" placeholder="Get in touch" className="border-b-1 bg-black border-b-zinc-600 md:w-[400px] border-l-0 border-r-0 border-t-0 max-md:w-[280px]"/>
                         <p className="md:ml-12 max-md:px-2">studio@diarc.ar</p>
                         <p className="md:ml-12 max-md:px-2">+ 54 9 11 7363 2924</p>

@@ -10,13 +10,6 @@
     font-style: normal;
   }
 
-#diarc{
-    font-family: 'AkiraExpanded', sans-serif;
-    font-weight:normal;
-    font-size: 120px;
-    color: white;
-}
-
 
 :root{
     scroll-behavior:  smooth;
@@ -143,15 +136,6 @@
 }
 
 @media(max-width:627px){
-    #diarc{
-        font-size: 80px;
-    }
-
-    #studio{
-        letter-spacing: 46px;
-        font-size: 26px;
-        margin-right: 38px;
-    }
     #initialText{
         height: 300px;
     }

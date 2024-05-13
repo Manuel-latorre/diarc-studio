@@ -47,7 +47,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-normal", className)}>
       <div id="initialText" className="w-full flex items-center justify-center">
-        <div style={{lineHeight:1.5}} className="max-md:-mt-32 dark:text-white text-black text-xl tracking-wide mx-auto text-center md:text-3xl ">
+        <div style={{lineHeight:1.5}} className="max-md:-mt-32 dark:text-white text-black text-xl tracking-wide mx-auto text-center md:text-2xl ">
           {renderWords()}
         </div>
       </div>

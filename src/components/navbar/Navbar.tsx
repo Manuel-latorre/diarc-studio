@@ -5,8 +5,8 @@ import styles from './Navbar.module.css';
 import { useEffect, useState } from 'react';
 
 const navLinks1 = [
-    {path: '/#solutions', text: 'Solutions'},
-    {path: '/#portfolio', text: 'Portfolio'},
+  {path: '/#solutions', text: 'Solutions'},
+  {path: '/#portfolio', text: 'Portfolio'},
 ];
 
 const navLinks2 = [

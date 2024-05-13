@@ -18,6 +18,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  
+
   return (
     <html lang="en" className="dark">
       <link rel="shortcut icon" href="/favicon/favicon.ico" />

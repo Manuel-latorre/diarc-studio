@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../images/logoNavbar1.png"
+import diarc from '../../images/diarcHome.png'
 
 export const Logo = () => {
   const navbarHeight = 50;
@@ -51,22 +52,19 @@ export const Logo = () => {
   };
 
   return (
-    <div className="z-30 max-lg:z-40">
+    <div className="z-30 max-lg:z-40" id="home">
       <div className="w-full h-full flex justify-center items-center">
         {showImage ? (
             <div style={imageStyle}>
               <Link href={"/"}>
-                <div className="flex flex-col items-center text-center">
-                  <h1 id="diarc">DIARC</h1>
-                  <p id="studio" className="tracking-[72px] text-4xl text-white ml-20">
-                    STUDIO
-                  </p>
-                </div>
+                <Image src={diarc} width={400} height={400} alt="Diarc logo"/>
               </Link>
             </div>
         ) : (
           <div style={imageStyle}>
-            <Image width={300} height={300} src={logo} alt="logo"/>
+            <Link href={"/"}>
+              <Image width={200} height={200} src={logo} alt="Diarc logo"/>
+            </Link>
           </div>
         )}
       </div>
