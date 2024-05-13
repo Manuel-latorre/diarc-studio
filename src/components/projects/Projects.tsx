@@ -87,19 +87,19 @@ export const Projects = () => {
   
   
   const iconMapping: Record<AvailableIn, JSX.Element> = {
-    web: <WebIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    mobile: <MobileIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    vr: <VrIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    ar: <ArIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    console: <ConsoleIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
-    desktop: <DesktopIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>
+    web: <WebIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    mobile: <MobileIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    vr: <VrIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    ar: <ArIcon className="fill-white max-md:w-[42px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    console: <ConsoleIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>,
+    desktop: <DesktopIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px]"/>
   };
 
   type Technologies = 'unrealengine' | 'maya' | 'roblox' | 'cinema' | 'zbrush' | 'substancePainter' | 'substanceDesigner' | 'adobe' | 'unity' | 'blender' | 'chaosvr' | 'dsmax';
   
 const iconTechnologiesMapping: Record<Technologies, JSX.Element> = {
   unrealengine: <UnrealEngineIcon/>,
-  maya: <MayaIcon />,
+  maya: <MayaIcon/>,
   roblox: <RobloxIcon />,
   cinema: <CinemaIcon />,
   zbrush: <ZBrushIcon />,
