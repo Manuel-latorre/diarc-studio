@@ -19,7 +19,9 @@ export default function Footer (){
                     <p className="text-6xl font-semibold uppercase max-md:px-2 md:-translate-x-14 max-md:text-4xl">together</p>
                     <div className="mt-12 flex flex-col gap-4 max-md:px-4 max-md:mt-8">
                         <input type="text" placeholder="Get in touch" className="border-b-1 bg-black border-b-zinc-600 md:w-[400px] border-l-0 border-r-0 border-t-0 max-md:w-[280px]"/>
-                        <p className="md:ml-12 max-md:px-2">studio@diarc.ar</p>
+                        <Link className="md:ml-12 max-md:px-2" href={`mailto:studio@diarc.ar`} title={`Send email to studio@diarc.ar`} target="_blank" rel="noopener noreferrer">
+                            studio@diarc.ar
+                        </Link>
                         <p className="md:ml-12 max-md:px-2">+ 54 9 11 7363 2924</p>
                         <p className="md:ml-12 max-md:px-2">877 Luis Maria Campos Avenue, Buenos Aires, Argentina</p>
                         <div className="flex items-center gap-4 md:ml-20 max-md:justify-center">
