@@ -63,7 +63,7 @@ export const Projects = () => {
     },
   })
 
-  const filterProjects = (platform: string) => {
+  const filterProjects = (platform: string, selectedFilters: Set<string>, projects: Project[], setSelectedFilters: (filters: Set<string>) => void, setFilteredProjects: (projects: Project[]) => void) => {
     const updatedFilters = new Set(selectedFilters);
     if (updatedFilters.has(platform)) {
       updatedFilters.delete(platform); // Si el filtro ya está seleccionado, quitarlo
@@ -74,24 +74,25 @@ export const Projects = () => {
   
     // Filtrar proyectos basados en los filtros seleccionados
     const filteredProjects = projects.filter((project: Project) =>
-      [...updatedFilters].some(filter => project.availableIn.includes(filter))
+      updatedFilters.size === 0 || [...updatedFilters].some(filter => project.availableIn.includes(filter))
     );
     setFilteredProjects(filteredProjects);
   };
   
-  const isFilterSelected = (platform: string) => {
+  const isFilterSelected = (platform: string, selectedFilters: Set<string>) => {
     return selectedFilters.has(platform);
   };
   
-  
-  const buttonClass = (filter: any) => {
+  const buttonClass = (filter: any, selectedFilters: Set<string>) => {
     if (selectedFilters.size === 0) {
       return "p-2 hover:scale-105 transition duration-75 fill-white"; // Todos los iconos en blanco inicialmente
     }
-    return isFilterSelected(filter)
+    return isFilterSelected(filter, selectedFilters)
       ? "p-2 hover:scale-105 transition duration-75 fill-white" // Icono seleccionado en blanco
       : "p-2 hover:scale-105 transition duration-75 fill-zinc-700"; // Otros iconos en fill-zinc-700
   };
+
+
   const handleOpen = (project:any) => {
     setSelectedProject(project);
     onOpen();
@@ -186,22 +187,22 @@ const renderIcon = (availableIn: AvailableIn) => {
       <div className="bg-black flex justify-center mt-[10%] h-screen max-md:h-[400px]">
       <div className="flex flex-col justify-center gap-2 translate-x-12 z-20 items-center mx-auto max-md:hidden">
         <button
-          onClick={() => filterProjects("web")}
+          onClick={() => filterProjects("web", selectedFilters, projects, setSelectedFilters, setFilteredProjects)}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <WebIcon
-            className={buttonClass("web")}
+             className={buttonClass("web", selectedFilters)}
           />
           <p className={"text-zinc-400 font-light text-sm text-center"}>
             Web
           </p>
         </button>
         <button
-          onClick={() => filterProjects("mobile")}
+          onClick={() => filterProjects("mobile", selectedFilters, projects, setSelectedFilters, setFilteredProjects)}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <MobileIcon
-            className={buttonClass("mobile")}
+            className={buttonClass("mobile", selectedFilters)}
           />
           <p
             className={"text-zinc-400 font-light text-sm text-center"}
@@ -210,11 +211,11 @@ const renderIcon = (availableIn: AvailableIn) => {
           </p>
         </button>
         <button
-          onClick={() => filterProjects("console")}
+          onClick={() => filterProjects("console", selectedFilters, projects, setSelectedFilters, setFilteredProjects)}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <ConsoleIcon
-            className={buttonClass("console")}
+            className={buttonClass("console", selectedFilters)}
           />
           <p
             className={"text-zinc-400 font-light text-sm text-center"}
@@ -223,11 +224,11 @@ const renderIcon = (availableIn: AvailableIn) => {
           </p>
         </button>
         <button
-          onClick={() => filterProjects("desktop")}
+          onClick={() => filterProjects("desktop", selectedFilters, projects, setSelectedFilters, setFilteredProjects)}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <DesktopIcon
-            className={buttonClass("desktop")}
+            className={buttonClass("desktop", selectedFilters)}
           />
           <p
             className={"text-zinc-400 font-light text-sm text-center"}
@@ -236,11 +237,11 @@ const renderIcon = (availableIn: AvailableIn) => {
           </p>
         </button>
         <button
-          onClick={() => filterProjects("ar")}
+          onClick={() => filterProjects("ar", selectedFilters, projects, setSelectedFilters, setFilteredProjects)}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <ArIcon
-            className={buttonClass("ar")}
+            className={buttonClass("ar", selectedFilters)}
           />
           <p
             className={"text-zinc-400 font-light text-sm text-center"}
@@ -249,11 +250,11 @@ const renderIcon = (availableIn: AvailableIn) => {
           </p>
         </button>
         <button
-          onClick={() => filterProjects("vr")}
+          onClick={() => filterProjects("vr", selectedFilters, projects, setSelectedFilters, setFilteredProjects)}
           className="p-2 hover:scale-105 transition duration-75"
         >
           <VrIcon
-            className={buttonClass("vr")}
+            className={buttonClass("vr", selectedFilters)}
           />
           <p
             className={"text-zinc-400 font-light text-sm text-center"}
