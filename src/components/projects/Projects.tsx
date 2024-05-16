@@ -74,7 +74,7 @@ export const Projects = () => {
   
     // Filtrar proyectos basados en los filtros seleccionados
     const filteredProjects = projects.filter((project: Project) =>
-      [...updatedFilters].every(filter => project.availableIn.includes(filter))
+      [...updatedFilters].some(filter => project.availableIn.includes(filter))
     );
     setFilteredProjects(filteredProjects);
   };
@@ -83,11 +83,15 @@ export const Projects = () => {
     return selectedFilters.has(platform);
   };
   
-  const buttonClass = (filter:any) =>
-    isFilterSelected(filter)
-      ? "p-2 hover:scale-105 transition duration-75 fill-zinc-700" // Si el filtro está seleccionado, aplicar estilo con el color deseado
-      : "p-2 hover:scale-105 transition duration-75 fill-white";
-
+  
+  const buttonClass = (filter: any) => {
+    if (selectedFilters.size === 0) {
+      return "p-2 hover:scale-105 transition duration-75 fill-white"; // Todos los iconos en blanco inicialmente
+    }
+    return isFilterSelected(filter)
+      ? "p-2 hover:scale-105 transition duration-75 fill-white" // Icono seleccionado en blanco
+      : "p-2 hover:scale-105 transition duration-75 fill-zinc-700"; // Otros iconos en fill-zinc-700
+  };
   const handleOpen = (project:any) => {
     setSelectedProject(project);
     onOpen();
@@ -180,7 +184,7 @@ const renderIcon = (availableIn: AvailableIn) => {
   return (
     <div className="">
       <div className="bg-black flex justify-center mt-[10%] h-screen max-md:h-[400px]">
-      <div className="flex flex-col justify-center gap-2 px-10 z-20 items-center mx-auto max-md:hidden">
+      <div className="flex flex-col justify-center gap-2 translate-x-12 z-20 items-center mx-auto max-md:hidden">
         <button
           onClick={() => filterProjects("web")}
           className="p-2 hover:scale-105 transition duration-75"
