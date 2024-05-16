@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
-      <meta property="og:image" content="https://res.cloudinary.com/drsrva2kp/image/upload/v1715891806/Diarc-Full-Blanco-Vertical_kzd7sx.png" />
+      <meta property="og:image" content="https://res.cloudinary.com/drsrva2kp/image/upload/v1715900472/1_rxi49r.png" />
       <body className={baijamjuree.className}>
         <Providers>
           <Nav/>
