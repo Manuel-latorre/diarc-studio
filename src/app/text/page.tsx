@@ -10,8 +10,6 @@ export default function TextIncial (){
     return (
       <div className="flex flex-col justify-center lg:w-[75%] mx-auto gap-8 px-5 mb-10 max-lg:w-[95%]">
         <TextGenerateEffect words={words}/>
-
-        <p className="lg:text-xl text-white text-center">We build, <span className="font-bold">digitally</span></p>
       </div>
     );
 }

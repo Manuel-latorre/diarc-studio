@@ -57,7 +57,7 @@ export const Logo = () => {
         {scrolledDown ? ( // Cambiado a scrolledDown para determinar qué imagen mostrar
           <div style={imageStyle}>
             <Link href={"/"}>
-              <Image src={logo} width={200} height={200} alt="Diarc logo al scrollear"/>
+              <Image src={logo} width={200} height={200} alt="Diarc logo al scrollear" className="max-md:w-[150px] max-md:h-[100px]"/>
             </Link>
           </div>
         ) : (

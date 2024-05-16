@@ -29,7 +29,7 @@ export const NavMobile = () => {
 
         />
         </NavbarContent>
-        <NavbarMenu className={`bg-gradient-to-t bg-transparent z-50 mt-10`}>
+        <NavbarMenu className={`bg-gradient-to-t bg-transparent z-50 mt-9`}>
               <div className="flex flex-col gap-4 mt-10">
                 <NavbarMenuItem>
                   <Link onClick={() => setIsMenuOpen(false)} href={"/#solutions"} className="uppercase font-bold">
