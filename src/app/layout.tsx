@@ -11,6 +11,7 @@ const baijamjuree = Bai_Jamjuree({subsets: ["latin"], weight: ["700", "600", "50
 export const metadata: Metadata = {
   title: "Diarc Studio",
   description: "We build, digitally",
+  metadataBase: new URL("https://www.diarc.studio/")
 };
 
 export default function RootLayout({
