@@ -34,6 +34,7 @@ import NextIcon from "../icons/NextIcon";
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import Arrow from "./Arrows";
+import ExpandIcon from "../icons/ExpandIcon";
 
 
 async function fetchProjects(): Promise<Project[]> {
@@ -110,12 +111,12 @@ export const Projects = () => {
   
   
   const iconMapping: Record<AvailableIn, JSX.Element> = {
-    web: <WebIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
-    mobile: <MobileIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[65px] lg:w-[60px] lg:h-[60px]"/>,
-    vr: <VrIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
-    ar: <ArIcon className="fill-white max-md:w-[42px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
-    console: <ConsoleIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
-    desktop: <DesktopIcon className="fill-white max-md:w-[20px] max-md:h-[20px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>
+    web: <WebIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
+    mobile: <MobileIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[50px] md:h-[65px] lg:w-[60px] lg:h-[60px]"/>,
+    vr: <VrIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
+    ar: <ArIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
+    console: <ConsoleIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>,
+    desktop: <DesktopIcon className="fill-white max-md:w-[40px] max-md:h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"/>
   };
 
   type Technologies = 'unrealengine' | 'maya' | 'roblox' | 'cinema' | 'zbrush' | 'substancePainter' | 'substanceDesigner' | 'adobe' | 'unity' | 'blender' | 'chaosvr' | 'dsmax';
@@ -334,10 +335,12 @@ const renderIcon = (availableIn: AvailableIn) => {
                     src={logo}
                     alt="Diarc Logo"
                   />
+
                   <div className="opacity-0 hover:opacity-100 absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300">
                     <h3 className="text-xl font-semibold text-white w-48 text-center">
                       {project.title}
                     </h3>
+                  <ExpandIcon/>
                   </div>
                 </div>
               </SwiperSlide>
@@ -345,12 +348,12 @@ const renderIcon = (availableIn: AvailableIn) => {
             <Modal size="full" isOpen={isOpen} onClose={onClose} className="">
               <ModalContent
                 className="bgProyect overflow-y-auto"
-                /* onWheel={(event) => {
+              //   onWheel={(event) => {
                
-               if (event.deltaY > 0) {
-                 handleCloseModal(); 
-                }
-              }} */
+              //  if (event.deltaY > 0) {
+              //    handleCloseModal(); 
+              //   }
+              // }}
               >
                 {(onClose) => (
                   <>
