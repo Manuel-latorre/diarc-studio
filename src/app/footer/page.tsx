@@ -8,6 +8,9 @@ import bgMedia from '../../images/bgSocialMedia.svg'
 
 import Image from "next/image"
 import Link from "next/link"
+import PinIcon from "@/components/icons/PinIcon"
+import WpIcon from "@/components/icons/WpIcon"
+import EmailIcon from "@/components/icons/EmailIcon"
 
 export default function Footer (){
     return(
@@ -19,13 +22,18 @@ export default function Footer (){
                     <p className="text-6xl font-semibold uppercase max-md:px-2 md:-translate-x-14 max-md:text-4xl">together</p>
                     <div className="mt-12 flex flex-col gap-4 max-md:px-4 max-md:mt-8">
                         <input type="text" placeholder="Get in touch" className="border-b-1 bg-black border-b-zinc-600 md:w-[400px] border-l-0 border-r-0 border-t-0 max-md:w-[280px]"/>
-                        <Link className="md:ml-12 max-md:px-2" href={`mailto:studio@diarc.ar`} title={`Send email to studio@diarc.ar`} target="_blank" rel="noopener noreferrer">
-                            studio@diarc.ar
+                        <Link className="md:ml-10 max-md:px-2 flex items-center gap-2" href={`mailto:studio@diarc.ar`} title={`Send email to studio@diarc.ar`} target="_blank" rel="noopener noreferrer">
+                            <EmailIcon/>
+                            <p>studio@diarc.ar</p>
                         </Link>
-                        <Link href={"https://api.whatsapp.com/send/?phone=5491173632924&text&type=phone_number&app_absent=0"} target="_blank">
-                            <p className="md:ml-12 max-md:px-2">+ 54 9 11 7363 2924</p>
+                        <Link className="md:ml-10 max-md:px-2 flex items-center gap-2" href={"https://api.whatsapp.com/send/?phone=5491173632924&text&type=phone_number&app_absent=0"} target="_blank">
+                            <WpIcon/>
+                            <p>+ 54 9 11 7363 2924</p>
                         </Link>
-                        <p className="md:ml-12 max-md:px-2">877 Luis Maria Campos Avenue, Buenos Aires, Argentina</p>
+                        <Link href={"https://www.google.com/maps?ll=-34.568491,-58.437029&z=16&t=m&hl=es-419&gl=AR&mapclient=embed&q=Av.+Luis+Mar%C3%ADa+Campos+877+Cdad.+Aut%C3%B3noma+de+Buenos+Aires"} className="md:ml-10 max-md:px-2 flex items-center gap-2" target="_blank">
+                            <PinIcon/>
+                            <p>877 Luis Maria Campos Avenue, Buenos Aires, Argentina</p>
+                        </Link>
                         <div className="flex max-lg:items-center gap-4 md:ml-20 max-md:justify-center">
                             <p className="font-semibold lg:text-2xl lg:translate-y-12">Find us on</p>
                             <div className="bgSocialMedia">
