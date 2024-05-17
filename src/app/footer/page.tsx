@@ -22,23 +22,28 @@ export default function Footer (){
                         <Link className="md:ml-12 max-md:px-2" href={`mailto:studio@diarc.ar`} title={`Send email to studio@diarc.ar`} target="_blank" rel="noopener noreferrer">
                             studio@diarc.ar
                         </Link>
-                        <p className="md:ml-12 max-md:px-2">+ 54 9 11 7363 2924</p>
+                        <Link href={"https://api.whatsapp.com/send/?phone=5491173632924&text&type=phone_number&app_absent=0"} target="_blank">
+                            <p className="md:ml-12 max-md:px-2">+ 54 9 11 7363 2924</p>
+                        </Link>
                         <p className="md:ml-12 max-md:px-2">877 Luis Maria Campos Avenue, Buenos Aires, Argentina</p>
-                        <div className="flex items-center gap-4 md:ml-20 max-md:justify-center">
-                            <p className="font-semibold">Find us on</p>
+                        <div className="flex max-lg:items-center gap-4 md:ml-20 max-md:justify-center">
+                            <p className="font-semibold lg:text-2xl lg:translate-y-12">Find us on</p>
                             <div className="bgSocialMedia">
-                                <Link href={"https://www.instagram.com/diarc.studio/"} target="_blank">
-                                    <InstagramIcon/>
-                                </Link>
-                                <Link href={"https://www.linkedin.com/company/diarcstudio"} target="_blank">
-                                    <LinkedinIcon/>
-                                </Link>
-                                <Link href={"https://api.whatsapp.com/send/?phone=5491173632924&text&type=phone_number&app_absent=0"} target="_blank">
-                                    <WhatsappIcon/>
-                                </Link>
-                                <Link href={"https://www.youtube.com/channel/UCS679OEsKuiY9I_aFna9hBA"} target="_blank">
-                                    <YoutubeIcon/>
-                                </Link>
+                                    <div className="flex items-center lg:translate-y-4 lg:translate-x-2">
+                                        <Link href={"https://www.instagram.com/diarc.studio/"} target="_blank">
+                                            <InstagramIcon/>
+                                        </Link>
+                                        <Link href={"https://www.linkedin.com/company/diarcstudio"} target="_blank">
+                                            <LinkedinIcon/>
+                                        </Link>
+                                        {/* <Link href={"https://api.whatsapp.com/send/?phone=5491173632924&text&type=phone_number&app_absent=0"} target="_blank">
+                                            <WhatsappIcon/>
+                                        </Link> */}
+                                        <Link href={"https://www.youtube.com/channel/UCS679OEsKuiY9I_aFna9hBA"} target="_blank">
+                                            <YoutubeIcon/>
+                                        </Link>
+                                    </div>
+                               
                             </div>
                         </div>
                     </div>

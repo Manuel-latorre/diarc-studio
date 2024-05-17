@@ -3,7 +3,7 @@ import React from 'react'
 import yt from '../../images/youtube.png'
 
 const YoutubeIcon = () => {
-  return <Image width={40} height={40} src={yt} alt='Youtube Icon'/>
+  return <Image width={60} height={60} src={yt} alt='Youtube Icon' className='max-lg:w-[40px] max-lg:h-[33px]'/>
 }
 
 export default YoutubeIcon
