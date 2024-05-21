@@ -184,8 +184,9 @@ const renderIcon = (availableIn: AvailableIn) => {
   };
     
   return (
-    <div className="">
-      <div className="bg-black flex justify-center mt-[10%] h-screen max-md:h-[400px]">
+    <div className="mt-[10%]">
+      <p className="text-center text-3xl font-bold top-5">Explore our work</p>
+      <div className="bg-black flex justify-center mt-[5%] h-screen max-md:h-[400px]">
       <div className="flex flex-col justify-center gap-2 translate-x-12 z-20 items-center mx-auto max-md:hidden">
         <button
           onClick={() => filterProjects("web", selectedFilters, projects, setSelectedFilters, setFilteredProjects)}
