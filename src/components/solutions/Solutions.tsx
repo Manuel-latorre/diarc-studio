@@ -9,32 +9,32 @@ export const Solutions: React.FC = () => {
   const [showRightText, setShowRightText] = useState(false);
   const [showLeftText, setShowLeftText] = useState(false);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      const handleTimeUpdate = () => {
-        const currentTime = video.currentTime;
+  // useEffect(() => {
+  //   const video = videoRef.current;
+  //   if (video) {
+  //     const handleTimeUpdate = () => {
+  //       const currentTime = video.currentTime;
 
-        if (currentTime >= 2 && currentTime < 7) {
-          setShowRightText(true);
-        } else {
-          setShowRightText(false);
-        }
+  //       if (currentTime >= 2 && currentTime < 7) {
+  //         setShowRightText(true);
+  //       } else {
+  //         setShowRightText(false);
+  //       }
 
-        if (currentTime >= 9) {
-          setShowLeftText(true);
-        } else {
-          setShowLeftText(false);
-        }
-      };
+  //       if (currentTime >= 9) {
+  //         setShowLeftText(true);
+  //       } else {
+  //         setShowLeftText(false);
+  //       }
+  //     };
 
-      video.addEventListener('timeupdate', handleTimeUpdate);
+  //     video.addEventListener('timeupdate', handleTimeUpdate);
 
-      return () => {
-        video.removeEventListener('timeupdate', handleTimeUpdate);
-      };
-    }
-  }, []);
+  //     return () => {
+  //       video.removeEventListener('timeupdate', handleTimeUpdate);
+  //     };
+  //   }
+  // }, []);
 
   return (
     <div className={`${style.videoContainer} max-md:hidden`}>

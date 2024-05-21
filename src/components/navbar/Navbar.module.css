@@ -9,7 +9,6 @@
 
 .link{
   @apply hover:scale-105 transition duration-75 uppercase text-white tracking-widest text-lg z-50 font-bold flex items-center justify-center w-[200px] h-[100px];
-  /* background-image: url(../../images/Storke-Menu.svg); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -22,5 +21,6 @@
   width: 200px;
   height: 100px;
   color: black;
+  padding-left: 25px;
   @apply flex items-center justify-center uppercase text-black tracking-widest text-lg z-50 font-bold
 }
