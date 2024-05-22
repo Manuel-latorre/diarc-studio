@@ -2,59 +2,66 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import style from './Solutions.module.css';
+import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 export const Solutions: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [showRightText, setShowRightText] = useState(false);
-  const [showLeftText, setShowLeftText] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [showText, setShowText] = useState(false);
 
-  // useEffect(() => {
-  //   const video = videoRef.current;
-  //   if (video) {
-  //     const handleTimeUpdate = () => {
-  //       const currentTime = video.currentTime;
+  useEffect(() => {
+    const video = videoRef.current;
+    const section = sectionRef.current;
 
-  //       if (currentTime >= 2 && currentTime < 7) {
-  //         setShowRightText(true);
-  //       } else {
-  //         setShowRightText(false);
-  //       }
+    if (video && section) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              video.play();
+              setTimeout(() => {
+                setShowText(true);
+              }, 2000);
+            } else {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
 
-  //       if (currentTime >= 9) {
-  //         setShowLeftText(true);
-  //       } else {
-  //         setShowLeftText(false);
-  //       }
-  //     };
+      observer.observe(section);
 
-  //     video.addEventListener('timeupdate', handleTimeUpdate);
+      return () => {
+        observer.unobserve(section);
+      };
+    }
+  }, []);
 
-  //     return () => {
-  //       video.removeEventListener('timeupdate', handleTimeUpdate);
-  //     };
-  //   }
-  // }, []);
+  useEffect(() => {
+    Aos.init();
+  }, [])
 
   return (
-    <div className={`${style.videoContainer} max-md:hidden`}>
-      <video autoPlay loop muted ref={videoRef} className={style.video}>
+    <div ref={sectionRef} className={`${style.videoContainer} max-md:hidden`}>
+      <video muted ref={videoRef} className={style.video}>
         <source src="/bgSolutions.mp4" type="video/webm" />
       </video>
-      <div className={`${style.overlay}`}>
-        <div className='flex justify-between w-[90%] mx-auto'>
-          <div style={{ opacity: showLeftText ? 1 : 0, transition: 'opacity 0.5s' }}>
-            <h2 className='text-white font-semibold text-3xl text-center mb-2'>3D ART OUTSOURCING</h2>
-            <p className='text-zinc-400 font-semibold text-2xl text-center mt-5'>ENVIRONMENTS</p>
-            <p className='text-zinc-400 font-semibold text-2xl text-center mt-5'>CHARACTERS</p>
-            <p className='text-zinc-400 font-semibold text-2xl text-center mt-5'>ASSETS AND PROPS</p>
+      <div className={`${style.overlay}`} style={{ display: 'flex', justifyContent: 'flex-end',}}>
+        <div className='flex flex-col gap-8 pr-10 w-[35%] mt-[3%]'>
+          <div>
+            <h2 className='text-white font-semibold text-2xl 2xl:text-3xl text-center mb-2' data-aos="zoom-out">3D ART OUTSOURCING</h2>
+            <p className='text-zinc-400 font-semibold text-xl 2xl:text2xl text-center mt-5' data-aos="zoom-out" data-aos-delay="100">ENVIRONMENTS</p>
+            <p className='text-zinc-400 font-semibold text-xl 2xl:text2xl text-center mt-5' data-aos="zoom-out" data-aos-delay="200">CHARACTERS</p>
+            <p className='text-zinc-400 font-semibold text-xl 2xl:text2xl text-center mt-5' data-aos="zoom-out" data-aos-delay="300">ASSETS AND PROPS</p>
           </div>
 
-          <div style={{ opacity: showRightText ? 1 : 0, transition: 'opacity 0.5s' }}>
-            <h2 className='text-white font-semibold text-3xl text-center mb-2'>GAME DEV. OUTSOURCING</h2>
-            <p className='text-zinc-400 font-semibold text-2xl text-center mt-5'>UNREAL ENGINE</p>
-            <p className='text-zinc-400 font-semibold text-2xl text-center mt-5'>UNITY</p>
-            <p className='text-zinc-400 font-semibold text-2xl text-center mt-5'>ROBLOX STUDIO</p>
+          <div>
+            <h2 className='text-white font-semibold text-2xl 2xl:text-3xl text-center mb-2' data-aos="zoom-out" data-aos-delay="400">GAME DEV. OUTSOURCING</h2>
+            <p className='text-zinc-400 font-semibold text-xl 2xl:text2xl text-center mt-5'data-aos="zoom-out" data-aos-delay="500">UNREAL ENGINE</p>
+            <p className='text-zinc-400 font-semibold text-xl 2xl:text2xl text-center mt-5' data-aos="zoom-out" data-aos-delay="600">UNITY</p>
+            <p className='text-zinc-400 font-semibold text-xl 2xl:text2xl text-center mt-5' data-aos="zoom-out" data-aos-delay="700">ROBLOX STUDIO</p>
           </div>
         </div>
       </div>
