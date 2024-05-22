@@ -1,4 +1,6 @@
-import { colors } from "@/colors/colors"
+"use client"
+
+
 import InstagramIcon from "@/components/icons/InstagramIcon"
 import LinkedinIcon from "@/components/icons/LinkedinIcon"
 import WhatsappIcon from "@/components/icons/WhatsappIcon"
@@ -11,10 +13,17 @@ import Link from "next/link"
 import PinIcon from "@/components/icons/PinIcon"
 import WpIcon from "@/components/icons/WpIcon"
 import EmailIcon from "@/components/icons/EmailIcon"
+import { useSectionRefs } from "../SectionsRefsContext"
 
 export default function Footer (){
+
+    const sectionRefs = useSectionRefs();
     return(
-        <div id="contact" className="pt-10 pb-4 bg-black">
+        <div id="contact" className="pt-10 pb-4 bg-black"
+        ref={(el) => {
+            sectionRefs.current['contact'] = el;
+          }}
+        >
             <div className="flex items-center justify-evenly max-md:flex-col max-md:justify-center max-lg:flex-wrap">
                 <div>
                     <p className="text-6xl font-semibold uppercase max-md:px-2 max-md:text-4xl">let´s</p>

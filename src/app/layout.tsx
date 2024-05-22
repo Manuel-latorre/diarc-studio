@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nav } from "@/components";
 import { Providers } from "./Providers";
 import { NavMobile } from "@/components/navbar/NavMobile";
+import { SectionRefsProvider } from "./SectionsRefsContext";
 
 const inter = Inter({ subsets: ["latin"] });
 const baijamjuree = Bai_Jamjuree({subsets: ["latin"], weight: ["700", "600", "500", "400", "300", "200"]})
@@ -28,9 +29,11 @@ export default function RootLayout({
       <meta property="og:image" content="https://res.cloudinary.com/drsrva2kp/image/upload/v1715900472/1_rxi49r.png" />
       <body className={baijamjuree.className}>
         <Providers>
+        <SectionRefsProvider>
           <Nav/>
           <NavMobile/>
           {children}
+        </SectionRefsProvider>
         </Providers>
       </body>
     </html>

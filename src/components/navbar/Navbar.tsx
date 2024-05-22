@@ -2,7 +2,8 @@
 import { ActiveLinks } from '../active-links/ActiveLinks';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useSectionRefs } from '@/app/SectionsRefsContext';
 
 const navLinks1 = [
   {path: '/#solutions', text: 'Solutions'},
@@ -20,7 +21,38 @@ export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLinks, setActiveLinks] = useState<{ [key: string]: boolean }>({});
 
-  
+  const sectionRefs = useSectionRefs();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      const newActiveLinks: { [key: string]: boolean } = {};
+
+      for (const key in sectionRefs.current) {
+        const section = sectionRefs.current[key];
+        if (section) {
+          const offsetTop = section.offsetTop;
+          const offsetBottom = offsetTop + section.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            newActiveLinks[`/#${key}`] = true;
+          } else {
+            newActiveLinks[`/#${key}`] = false;
+          }
+        }
+      }
+
+      setActiveLinks(newActiveLinks);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [sectionRefs]);
+
 
   useEffect(() => {
       const handleScroll = () => {
