@@ -13,8 +13,7 @@ export const metadata: Metadata = {
   description: "We build, digitally",
   metadataBase: new URL("https://www.diarc.studio/"),
   keywords: [
-    "Unreal", "Unreal Engine", "Unreal Engine Developer", "Buenos Aires", "Argentina", 
-    "Cheap", "Roblox", "Roblox Developer", "High quality", "High quality 3D", "Unity", 
+    "Unreal", "Unreal Engine", "Unreal Engine Developer", "Roblox", "Roblox Developer", "High quality", "High quality 3D", "Unity", 
     "Unity 3D", "3D", "Metaverse", "Cost-effective", "3D Environment", "VR", 
     "Virtual Reality", "Metaverse Developer", "Metaverse Builder", "Virtual World", 
     "Virtual Architecture", "Unreal Engine Production", "Gaming Experience", 
