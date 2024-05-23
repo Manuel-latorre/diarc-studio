@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Personalized", "3D Art", "Immersive", "Immersive experience", "Environment", 
     "Roblox Studio", "Game Developer", "Game Development", "AR", "XR", 
     "Augmented Reality", "Extended Reality", "Spatial Computing", "Entertainment", 
-    "Mixed Reality", "Fornite Developer", "Game Design", "Production", "VR Developer", 
+    "Mixed Reality", "Game Design", "Production", "VR Developer", 
     "Interactive Experiences", "Virtual Experience", "Videogame", "Videogame Programmer", 
     "Gamification", "Creating Game", "Indie Game", "Indie Game 3D", "Game Engine", 
     "Interactive Art", "CGI", "VFX", "VisionPro", "Quest", "Digital product agency", 
