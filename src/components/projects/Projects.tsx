@@ -35,6 +35,7 @@ import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import Arrow from "./Arrows";
 import ExpandIcon from "../icons/ExpandIcon";
+import Link from "next/link";
 
 
 async function fetchProjects(): Promise<Project[]> {
@@ -325,8 +326,9 @@ const renderIcon = (availableIn: AvailableIn) => {
                   objectFit="cover"
                   className="z-10"
                 />
-                <div
-                  onClick={() => handleOpen(project)}
+                <Link
+                  href={`/portfolio/${project.title}`}
+                  // onClick={() => handleOpen(project)}
                   className="absolute border-3 border-black top-0 left-0 w-full h-full after:content-[''] after:absolute after:inset-3 after:border-3 after:border-white after:-z-10 z-10 hover:bg-black hover:bg-opacity-50 transition-all"
                 >
                   <Image
@@ -343,10 +345,10 @@ const renderIcon = (availableIn: AvailableIn) => {
                     </h3>
                   <ExpandIcon/>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             ))}
-            <Modal size="full" isOpen={isOpen} onClose={onClose} className="">
+            {/* <Modal size="full" isOpen={isOpen} onClose={onClose} className="">
               <ModalContent
                 className="bgProyect overflow-y-auto"
               //   onWheel={(event) => {
@@ -538,7 +540,7 @@ const renderIcon = (availableIn: AvailableIn) => {
                   </>
                 )}
               </ModalContent>
-            </Modal>
+            </Modal> */}
           </Swiper>
         </>
 
