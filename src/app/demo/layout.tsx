@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Diarc Studio",
@@ -167,6 +168,7 @@ export default function RootLayout({
       />
       <body>
       {children}
+      <Toaster />
       </body>
     </html>
   );

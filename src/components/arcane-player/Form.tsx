@@ -1,6 +1,9 @@
-import React, { useRef } from 'react';
+"use client"
+
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Poppins } from 'next/font/google';
+import { toast } from 'sonner';
 
 
 const poppins = Poppins({
@@ -10,9 +13,14 @@ const poppins = Poppins({
   
 
 export const Form = () => {
+
+    const [loading, setLoading] = useState(false)
+
+
   const form = useRef();
 
   const sendEmail = (e:any) => {
+    setLoading(true)
     e.preventDefault();
 
     emailjs
@@ -22,11 +30,16 @@ export const Form = () => {
       .then(
         () => {
           console.log('SUCCESS!');
+          toast.success("Message sended successfully")
         },
         (error) => {
           console.log('FAILED...', error.text);
+          toast.success("Error sending message, please try again later")
+
         },
       );
+
+      setLoading(false)
   };
 
   return (
@@ -44,7 +57,7 @@ export const Form = () => {
         <textarea name="message" className='bg-white p-2 rounded-xl' placeholder='Message....'/>
       </div>
       <button type="submit" value="Send" className='bg-white p-2 rounded-xl w-full mt-4 text-gray-700 font-semibold hover:opacity-75 transition-all'>
-        Send message
+        {loading ? "Sending message" : "Send message"}
       </button>
     </form>
   );
