@@ -133,7 +133,7 @@ const ArcanePlayer = () => {
 
       <div className="max-lg:flex-wrap flex items-center justify-center gap-4">
         {cards.map((data) => (
-          <div className="p-4 rounded-xl bg-[#404040] shadow-xl flex flex-col gap-4 max-w-[200px] h-[150px] items-center justify-between">
+          <div key={data.title} className="p-4 rounded-xl bg-[#404040] shadow-xl flex flex-col gap-4 max-w-[200px] h-[150px] items-center justify-between">
             {/* Ícono al principio */}
             <div className="flex-1 flex items-center justify-center">
               {data.icon}
