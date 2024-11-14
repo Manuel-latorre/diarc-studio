@@ -67,8 +67,6 @@ export default function RootLayout({
       <body className={baijamjuree.className}>
         <Providers>
         <SectionRefsProvider>
-          <Nav/>
-          <NavMobile/>
           {children}
         </SectionRefsProvider>
         </Providers>

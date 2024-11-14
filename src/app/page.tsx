@@ -1,6 +1,6 @@
 
 
-import { Logo, Solutions, Mask} from "../components";
+import { Logo, Solutions, Mask, Nav} from "../components";
 import Link from "next/link";
 import Footer from "./footer/page";
 import Portfolio from "./portfolio/page";
@@ -9,11 +9,14 @@ import TextIncial from "./text/page";
 import SolutionsPage from "./solutions/page";
 import WeBuildDigitally from "@/components/ui/WeBuildDigitally";
 import HomePage from "./home/page";
+import { NavMobile } from "@/components/navbar/NavMobile";
 
 export default function Home() {
 
   return (
       <div className="home">
+        <Nav/>
+        <NavMobile/>
          <video autoPlay loop muted className="video">
            <source src="/home.webm" type="video/webm" />
          </video>
