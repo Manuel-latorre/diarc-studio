@@ -1,11 +1,4 @@
-import type { Metadata } from "next";import { Bai_Jamjuree } from "next/font/google";
-import ArcanePlayer from "./page";
-
-const baijamjuree = Bai_Jamjuree({
-  subsets: ["latin"],
-  weight: ["700", "600", "500", "400", "300", "200"],
-});
-
+import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Diarc Studio",
   description: "We build, digitally",
@@ -172,7 +165,7 @@ export default function RootLayout({
         property="og:image"
         content="https://res.cloudinary.com/drsrva2kp/image/upload/v1715900472/1_rxi49r.png"
       />
-      <body className={baijamjuree.className}>
+      <body>
       {children}
       </body>
     </html>

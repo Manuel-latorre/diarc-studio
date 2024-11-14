@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Iconos" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 25.94px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-width: 27.93px;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-1" d="M101.73,105.5h309.89c31.12,0,56.34,25.23,56.34,56.34v216.76c0,29.7-22.98,54.04-52.14,56.19l-4.42.15-309.89-1.16c-31.03-.12-56.13-25.31-56.13-56.34v-215.6c0-31.12,25.23-56.34,56.34-56.34h0Z"/>
+    <path class="cls-1" d="M59.98,404.74l107.16-97.59,100.35,43.14,118.47-133.19s71.38,52.24,73.58,53.72"/>
+    <rect class="cls-2" x="158.95" y="223.75" width="10.3" height="9.51" rx="4.75" ry="4.75"/>
+  </g>
+  <image width="1067" height="1067" transform="translate(457.5 -106.5) scale(.67)" xlink:href="../../../../../../../../Shared drives/DIARC Studio - Management/01. MANAGEMENT/02. Marca/03. PAGINA WEB/Wordpress 2024/Página Web - Manuel Shared/Contenido para Web/CONTACT/Iconos redes/Whatsapp.png"/>
+  <image width="1067" height="1067" transform="translate(450.5 -630.5) scale(.67)" xlink:href="../../../../../../../../Shared drives/DIARC Studio - Management/01. MANAGEMENT/02. Marca/03. PAGINA WEB/Wordpress 2024/Página Web - Manuel Shared/Contenido para Web/CONTACT/Iconos redes/Instagram.png"/>
+</svg>

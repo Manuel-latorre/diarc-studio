@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Iconos" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-width: 33.98px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #fff;
+        stroke-miterlimit: 133.33;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke-width: 15.8px;
+      }
+    </style>
+  </defs>
+  <image width="2925" height="2134" transform="translate(497.5 36.5) scale(.21)" xlink:href="../../../../../../../../Shared drives/DIARC Studio - Management/01. MANAGEMENT/02. Marca/03. PAGINA WEB/Wordpress 2024/Página Web - Manuel Shared/Contenido para Web/CONTACT/Iconos redes/Youtube.png"/>
+  <g>
+    <path class="cls-1" d="M220.76,92.08h254.74"/>
+    <path class="cls-1" d="M37.14,92.08h91.81"/>
+    <path class="cls-1" d="M402.69,254.44h72.81"/>
+    <path class="cls-1" d="M36.5,254.44h288.86"/>
+    <circle class="cls-2" cx="174.86" cy="92.08" r="45.91"/>
+    <circle class="cls-2" cx="348.88" cy="254.44" r="45.91"/>
+    <path class="cls-1" d="M149.46,420.38H36.5"/>
+    <path class="cls-1" d="M475.5,420.38h-234.98"/>
+    <circle class="cls-2" cx="203.27" cy="420.38" r="45.91"/>
+  </g>
+</svg>
