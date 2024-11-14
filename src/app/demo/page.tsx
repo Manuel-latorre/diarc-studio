@@ -8,6 +8,7 @@ interface ArcanePlayerProps {
   height?: string;
 }
 
+// This is the actual component that should be exported
 const ArcanePlayer: React.FC<ArcanePlayerProps> = () => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -43,4 +44,5 @@ const ArcanePlayer: React.FC<ArcanePlayerProps> = () => {
   );
 };
 
+// Default export should be the component itself, not the interface
 export default ArcanePlayer;
