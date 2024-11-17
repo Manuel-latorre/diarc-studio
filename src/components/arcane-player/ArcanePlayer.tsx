@@ -17,15 +17,6 @@ const poppins = Poppins({
 
 const ArcanePlayer = () => {
   const [translate, setTranslate] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState(0);
-
-  // Cálculo de la altura del header
-  useEffect(() => {
-    const headerElement = document.getElementById("header");
-    if (headerElement) {
-      setHeaderHeight(headerElement.offsetHeight);
-    }
-  }, []);
 
   const translateToEnglish = () => setTranslate(true);
   const translateToSpanish = () => setTranslate(false);
@@ -89,7 +80,7 @@ const ArcanePlayer = () => {
       />
 
       {/* Pasar la altura calculada al componente Iframe */}
-      <Iframe headerHeight={headerHeight} />
+      <Iframe />
 
       {/* Descripción */}
       <Description
