@@ -5,8 +5,8 @@ const FiltersIcon = () => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     id="Iconos"
     viewBox="0 0 512 512"
-    width={40}
-    height={40}
+    width={35}
+    height={35}
   >
     <defs>
       <style>

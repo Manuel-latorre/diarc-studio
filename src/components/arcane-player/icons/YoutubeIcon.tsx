@@ -6,8 +6,8 @@ const YoutubeIcon = () => (
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
 
-    width={30}
-    height={30}
+    width={25}
+    height={25}
   >
     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
     <g

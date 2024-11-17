@@ -5,17 +5,15 @@ import {  Dialog,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
-
 import React from "react";
 import { Form } from "./Form";
 
-const ModalForm = () => {
+const ModalForm = ({text}:any) => {
   return (
     <Dialog>
       <DialogTrigger>
         <button className="border rounded-full py-1 px-3 hover:opacity-70 transition-all border-white">
-          GET IN TOUCH
+          {text}
         </button>
       </DialogTrigger>
       <DialogContent className="bg-[#2e2e2e] rounded-xl">
