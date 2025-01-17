@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useRef, useEffect } from "react";
 import { Play } from 'lucide-react';
 
@@ -9,11 +8,11 @@ const VideoToIframe = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const interactionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const hasInteractedRef = useRef(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const handleStartExperience = () => {
     setShowVideo(false);
-    hasInteractedRef.current = false;
+    setHasInteracted(false);
   };
 
   const handleInteraction = () => {
@@ -27,7 +26,7 @@ const VideoToIframe = () => {
   };
 
   const handleIframeInteraction = () => {
-    hasInteractedRef.current = true;
+    setHasInteracted(true);
     if (interactionTimeoutRef.current) {
       clearTimeout(interactionTimeoutRef.current);
     }
@@ -35,7 +34,7 @@ const VideoToIframe = () => {
 
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
+    if (video && showVideo) {
       video.play().catch(error => console.log("Auto-play was prevented:", error));
     }
   }, [showVideo]);
@@ -43,15 +42,17 @@ const VideoToIframe = () => {
   useEffect(() => {
     if (!showVideo) {
       interactionTimeoutRef.current = setTimeout(() => {
-        if (!hasInteractedRef.current) {
+        if (!hasInteracted) {
           setShowVideo(true);
         }
-      }, 20000);
+      }, 10000);
 
       const iframe = iframeRef.current;
+      const handleIframeInteractionWrapper = () => handleIframeInteraction();
+
       if (iframe) {
-        iframe.addEventListener('mousemove', handleIframeInteraction);
-        iframe.addEventListener('touchstart', handleIframeInteraction);
+        iframe.addEventListener('mousemove', handleIframeInteractionWrapper);
+        iframe.addEventListener('touchstart', handleIframeInteractionWrapper);
       }
 
       return () => {
@@ -59,12 +60,12 @@ const VideoToIframe = () => {
           clearTimeout(interactionTimeoutRef.current);
         }
         if (iframe) {
-          iframe.removeEventListener('mousemove', handleIframeInteraction);
-          iframe.removeEventListener('touchstart', handleIframeInteraction);
+          iframe.removeEventListener('mousemove', handleIframeInteractionWrapper);
+          iframe.removeEventListener('touchstart', handleIframeInteractionWrapper);
         }
       };
     }
-  }, [showVideo]);
+  }, [showVideo, hasInteracted]);
 
   return (
     <div className="relative w-full h-screen">
@@ -78,11 +79,11 @@ const VideoToIframe = () => {
           <video
             ref={videoRef}
             className="w-full h-full object-cover"
-            loop
+            loop 
             muted
             playsInline
           >
-            <source src="/testUno.mp4" type="video/webm"  />
+            <source src="https://res.cloudinary.com/drsrva2kp/video/upload/v1737077212/10689298-uhd_3840_2160_30fps_-_Compressed_with_FlexClip_r4hxxa.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div 
@@ -117,4 +118,3 @@ const VideoToIframe = () => {
 };
 
 export default VideoToIframe;
-
