@@ -7,9 +7,13 @@ const VideoToIframe = () => {
   const [showVideo, setShowVideo] = useState(true);
   const [showOverlay, setShowOverlay] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const interactionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const hasInteractedRef = useRef(false);
 
   const handleStartExperience = () => {
     setShowVideo(false);
+    hasInteractedRef.current = false;
   };
 
   const handleInteraction = () => {
@@ -22,12 +26,45 @@ const VideoToIframe = () => {
     }
   };
 
+  const handleIframeInteraction = () => {
+    hasInteractedRef.current = true;
+    if (interactionTimeoutRef.current) {
+      clearTimeout(interactionTimeoutRef.current);
+    }
+  };
+
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
       video.play().catch(error => console.log("Auto-play was prevented:", error));
     }
-  }, []);
+  }, [showVideo]);
+
+  useEffect(() => {
+    if (!showVideo) {
+      interactionTimeoutRef.current = setTimeout(() => {
+        if (!hasInteractedRef.current) {
+          setShowVideo(true);
+        }
+      }, 10000);
+
+      const iframe = iframeRef.current;
+      if (iframe) {
+        iframe.addEventListener('mousemove', handleIframeInteraction);
+        iframe.addEventListener('touchstart', handleIframeInteraction);
+      }
+
+      return () => {
+        if (interactionTimeoutRef.current) {
+          clearTimeout(interactionTimeoutRef.current);
+        }
+        if (iframe) {
+          iframe.removeEventListener('mousemove', handleIframeInteraction);
+          iframe.removeEventListener('touchstart', handleIframeInteraction);
+        }
+      };
+    }
+  }, [showVideo]);
 
   return (
     <div className="relative w-full h-screen">
@@ -64,6 +101,7 @@ const VideoToIframe = () => {
         </div>
       ) : (
         <iframe
+          ref={iframeRef}
           id="arcane-player-frame"
           src="https://embed.arcanemirage.com/1aaa4bb5-6350-4693-a8ab-8c8a91d4834c?key=aWQ9NDM2OCZrZXk9MWFhYTRiYjUtNjM1MC00NjkzLWE4YWItOGM4YTkxZDQ4MzRjJnRva2VuPVlFbnc5R2JCR1lwNg=="
           frameBorder="0"
