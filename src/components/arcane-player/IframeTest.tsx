@@ -2,15 +2,11 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { Play } from 'lucide-react';
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
 
-const DynamicVideo = dynamic(() => import('./DynamicVideo'), { ssr: false });
-
-const IframeTest = () => {
+const VideoToIframe = () => {
   const [showVideo, setShowVideo] = useState(true);
   const [showOverlay, setShowOverlay] = useState(false);
-  const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const interactionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const hasInteractedRef = useRef(false);
@@ -37,10 +33,12 @@ const IframeTest = () => {
     }
   };
 
-  const handleVideoError = () => {
-    console.error("Video failed to load");
-    setVideoError(true);
-  };
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(error => console.log("Auto-play was prevented:", error));
+    }
+  }, [showVideo]);
 
   useEffect(() => {
     if (!showVideo) {
@@ -48,7 +46,7 @@ const IframeTest = () => {
         if (!hasInteractedRef.current) {
           setShowVideo(true);
         }
-      }, 10000);
+      }, 20000);
 
       const iframe = iframeRef.current;
       if (iframe) {
@@ -77,23 +75,23 @@ const IframeTest = () => {
           onMouseLeave={handleMouseLeave}
           onTouchStart={handleInteraction}
         >
-          {videoError ? (
-            <Image
-              src="/fallback-image.jpg"
-              alt="Fallback Image"
-              layout="fill"
-              objectFit="cover"
-            />
-          ) : (
-            <DynamicVideo onError={handleVideoError} />
-          )}
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover"
+            loop
+            muted
+            playsInline
+          >
+            <source src="/testUno.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div 
             className={`absolute inset-0 bg-black transition-opacity duration-300 ${
               showOverlay ? 'opacity-50' : 'opacity-0'
             }`} 
           />
           <button
-            className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 flex items-center p-2 rounded-full border border-white ${
+            className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
               showOverlay ? 'opacity-100' : 'opacity-0'
             }`}
             onClick={handleStartExperience}
@@ -118,5 +116,5 @@ const IframeTest = () => {
   );
 };
 
-export default IframeTest;
+export default VideoToIframe;
 
