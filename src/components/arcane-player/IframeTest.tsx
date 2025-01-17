@@ -82,7 +82,7 @@ const VideoToIframe = () => {
             muted
             playsInline
           >
-            <source src="/testUno.mp4" type="video/mp4" />
+            <source src="/testUno.mp4" type="video/webm"  />
             Your browser does not support the video tag.
           </video>
           <div 
@@ -91,7 +91,7 @@ const VideoToIframe = () => {
             }`} 
           />
           <button
-            className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
+            className={`p-2 rounded-full border border-white flex items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
               showOverlay ? 'opacity-100' : 'opacity-0'
             }`}
             onClick={handleStartExperience}
