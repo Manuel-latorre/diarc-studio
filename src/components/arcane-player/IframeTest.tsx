@@ -2,11 +2,15 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { Play } from 'lucide-react';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
-const VideoToIframe = () => {
+const DynamicVideo = dynamic(() => import('./DynamicVideo'), { ssr: false });
+
+const IframeTest = () => {
   const [showVideo, setShowVideo] = useState(true);
   const [showOverlay, setShowOverlay] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoError, setVideoError] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const interactionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const hasInteractedRef = useRef(false);
@@ -33,12 +37,10 @@ const VideoToIframe = () => {
     }
   };
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      video.play().catch(error => console.log("Auto-play was prevented:", error));
-    }
-  }, [showVideo]);
+  const handleVideoError = () => {
+    console.error("Video failed to load");
+    setVideoError(true);
+  };
 
   useEffect(() => {
     if (!showVideo) {
@@ -75,16 +77,16 @@ const VideoToIframe = () => {
           onMouseLeave={handleMouseLeave}
           onTouchStart={handleInteraction}
         >
-          <video
-            ref={videoRef}
-            className="w-full h-full object-cover"
-            loop
-            muted
-            playsInline
-          >
-            <source src="/testUno.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {videoError ? (
+            <Image
+              src="/fallback-image.jpg"
+              alt="Fallback Image"
+              layout="fill"
+              objectFit="cover"
+            />
+          ) : (
+            <DynamicVideo onError={handleVideoError} />
+          )}
           <div 
             className={`absolute inset-0 bg-black transition-opacity duration-300 ${
               showOverlay ? 'opacity-50' : 'opacity-0'
@@ -116,5 +118,5 @@ const VideoToIframe = () => {
   );
 };
 
-export default VideoToIframe;
+export default IframeTest;
 
