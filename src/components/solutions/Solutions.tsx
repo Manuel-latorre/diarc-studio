@@ -46,7 +46,7 @@ export const Solutions: React.FC = () => {
   return (
     <div ref={sectionRef} className={`${style.videoContainer} max-md:hidden`}>
       <video muted ref={videoRef} className={style.video}>
-        <source src="/bgSolutions.mp4" type="video/webm" />
+        <source src="/bgSolutions.mp4" type="video/mp4" />
       </video>
       <div className={`${style.overlay}`} style={{ display: 'flex', justifyContent: 'flex-end',}}>
         <div className='flex flex-col gap-8 pr-10 w-[35%] mt-[3%]'>
